@@ -26,3 +26,5 @@ This repository features code, libraries and ideas from other people and project
 To build this project following things are needed:
 - Python 3.13
 - SimpleIDE by Parallax or propgcc
+
+As the provided Joystick API uses Microsoft DirectInput, the Python Code is only runnable on Windows

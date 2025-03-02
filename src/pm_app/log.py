@@ -17,5 +17,10 @@ class log_level(Enum):
     CRITICAL = 3
 
 
+def add_log(string, level):
+    _log.append((string, level))
+    pass
+
 def add_log(string):
+    _log.append(string)
     pass
