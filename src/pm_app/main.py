@@ -77,6 +77,7 @@ def cb_buttons(states):
     l_buttons.config(text=text)
 
 
+#TODO: When porting to mine, use CB_ACTION -> Calls always when atleast one button is pressed
 gph = gamepad.GamepadHandler(freq=100)
 gph.add_left_stick_callback(cb_left, gph.CB_CHANGED)
 gph.add_right_stick_callback(cb_right, gph.CB_CHANGED)

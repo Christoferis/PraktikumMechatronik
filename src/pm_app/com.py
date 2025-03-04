@@ -101,7 +101,6 @@ class communication_protocol:
 
     def _accept(self, command):
         pass
-
     pass
 
 # run thread after init
