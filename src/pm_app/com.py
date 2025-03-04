@@ -7,7 +7,7 @@ Consists of:
 - Communication Protocol
 '''
 
-from threading import Thread
+from threading import Thread, Semaphore
 from socket import create_connection
 # from constants import IP_DEST, PORT_DEST
 from constants import MAX_MSG_LEN, PINGINTERVAL
@@ -16,8 +16,9 @@ from time import time
 
 class transport_protocol:
 
-    self.thread = None
+    self.sink = Thread(None, _background, "Sink", [self])
     self.stop = False
+    self.sema = Semaphore()
     self.socket = None
     self.connection = None
     self.protocol = None
@@ -27,67 +28,73 @@ class transport_protocol:
         #open socket
         self.socket = create_connection((ip, port), 0.1)
         self.protocol = protocol
-        self.sink = Thread(None, _background, "Sink", [self])
         self.sink.isDaemon(True)
         self.sink.start()
-
-        print("Dispatched Sink Thread")
+        print("Dispatched Sink Daemon")
         pass
 
     def close(self):
         self.socket.close()
         self.stop = True
 
-
     def _background(self):
         counter = time()
         pingprogress = False
-
-        #TODO: move from blocking to non blocking with try except (or select) https://docs.python.org/3/library/socket.html#notes-on-socket-timeouts
+        buffer = b''
 
         while not self.stop:
-            msg = b''
+            msg = ""
 
             try:
-                # TODO: Check if stuff received is chunks, stop at \r if so
-                msg = self.socket.recv(MAX_MSG_LEN)
+                buffer = buffer.join([self.socket.recv(MAX_MSG_LEN)])
             except TimeoutError:
                 pass
 
-            if not (msg.isspace() or msg is b''):
+            if b'\r' in buffer:
+                tup = buffer.partition(b'\r')
+                msg = tup[0].decode()
+                buffer = tup[2]
 
-                if msg.startswith(b'r'):
-                    self.protocol._accept(msg.removeprefix(b'r'))
+            if not (msg.isspace() or msg is ""):
+                if msg.startswith("e"):
+                    add_log("i: " + msg, log_level.SPECIAL)
+                else:
+                    add_log("i: " + msg)
 
-                elif msg.startswith(b'm'):
-                    self.send(b'p\r')
+                if msg.startswith("r"):
+                    self.protocol._accept(msg.removeprefix("r"))
 
-                elif msg.startswith(b'p'):
+                elif msg.startswith("m"):
+                    self.send("p\r")
+
+                elif msg.startswith("p"):
                     pingprogress = False
-                    counter = time()           
-                    
-                elif msg.startswith(b'e'):
-                    add_log(msg.removeprefix(b'e'), log_level.SPECIAL)
+                    counter = time()                    
+                else:
+                    add_log("o: e404")
+                
+            #ping section
+            if (time() - counter >= PINGINTERVAL and not pingprogress):
+                counter = time()
+                self.ping = 0
+                pingprogress = True
+                self.send("m\r")
                 pass
-
-        #ping section
-
-        if (time() - counter >= PINGINTERVAL and not pingprogress):
-            counter = time()
-            self.ping = 0
-            pingprogress = True
-            pass
-        elif pingprogress:
-            self.ping = time() - counter
-            
-
-
-
+            elif pingprogress:
+                self.ping = time() - counter
         pass
 
     def send(self, msg):
+        with self.sema:
+            byte = msg.encode()
+            sent = 0
+
+            while sent < len(byte):
+                sent += self.socket.send(byte[sent:])
+                pass
         pass
 
+        add_log("o: " + msg, log_level.INFO)
     pass
 
 class communication_protocol:
