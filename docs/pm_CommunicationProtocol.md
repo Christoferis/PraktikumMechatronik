@@ -9,6 +9,8 @@ Messages der Kategorie Joystick erwarten keine Antwort.
 
 Solange ein gedrückter Button keine Antwort erhalten hat, soll dieser Button von weiterem betätigen geblockt werden.
 
+Messages von Host an den Bot können gebündelt werden (N-Key Rollover für Controller). Sie werden mit einem Semikolon geteilt und somit gebündelt
+
 ### Definition
 
 #### Host -> Bot
