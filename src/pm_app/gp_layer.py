@@ -50,13 +50,11 @@ def cb_buttons(states: list[bool]):
     buttons = states
     update_buttons(states)
 
-
     # run here to save one thread: CB_ALWAYS will always run this function callback
     # change if sending takes to long
     INSTANCE.msg_bundle(joystick, dpad, buttons)
 
 
-#TODO: Decouple UI from Gamepad, add global Array that oversees ALL changes
 gph = gamepad.GamepadHandler(freq=100)
 gph.add_left_stick_callback(cb_left, gph.CB_ALWAYS)
 gph.add_right_stick_callback(cb_right, gph.CB_ALWAYS)
