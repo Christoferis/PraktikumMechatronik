@@ -21,30 +21,45 @@ joystick = list()
 # booleans corresponding to index
 buttons = list()
 
-# booleans corresponding to index
-dpad = list()
+# single value
+dpad = dpad_map.NONE
 
-def cb_left(xy):
+# input is tuple
+def cb_left(xy: tuple[int, int]):
+    global joystick
+    joystick[1] = xy
     update_left(xy)
-    INSTANCE.msg_bundle()
 
-def cb_right(xy):
+def cb_right(xy: tuple[int, int]):
+    global joystick
+    joystick[0] = xy
+
     update_right(xy)
-    INSTANCE.msg_bundle()
 
-def cb_dpad(dpad):
+# input is single value
+def cb_dpad(dpad: int):
+    global dpad
+    dpad = dpad
+
     update_dpad(dpad)
-    INSTANCE.msg_bundle()
 
-def cb_buttons(states):
+# input is list
+def cb_buttons(states: list[bool]):
+
+    global buttons, joystick, dpad
+    buttons = states
     update_buttons(states)
-    INSTANCE.msg_bundle()
+
+
+    # run here to save one thread: CB_ALWAYS will always run this function callback
+    # change if sending takes to long
+    INSTANCE.msg_bundle(joystick, dpad, buttons)
 
 
 #TODO: Decouple UI from Gamepad, add global Array that oversees ALL changes
 gph = gamepad.GamepadHandler(freq=100)
-gph.add_left_stick_callback(cb_left, gph.CB_CHANGED)
-gph.add_right_stick_callback(cb_right, gph.CB_CHANGED)
-gph.add_dpad_callback(cb_dpad, gph.CB_CHANGED)
-gph.add_all_buttons_callback(cb_buttons, gph.CB_CHANGED)
+gph.add_left_stick_callback(cb_left, gph.CB_ALWAYS)
+gph.add_right_stick_callback(cb_right, gph.CB_ALWAYS)
+gph.add_dpad_callback(cb_dpad, gph.CB_ALWAYS)
+gph.add_all_buttons_callback(cb_buttons, gph.CB_ALWAYS)
 gph.start()

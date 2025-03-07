@@ -53,7 +53,7 @@ p_stick_left_x.step(50)
 p_stick_right_y.step(50)
 p_stick_right_x.step(50)
 
-
+# xy is a tuple
 def update_left(xy):
     x_val = (xy[0] * 100) // (AxisMax * 2) + 50
     y_val = (xy[1] * 100) // (AxisMax * 2) + 50
@@ -67,7 +67,7 @@ def update_right(xy):
     axis_states[2].set(x_val)
     axis_states[3].set(y_val)
 
-
+# dpad: 
 def update_dpad(dpad):
     l_dpad.config(text=f"DPad: {dpad_map(dpad).name}")
 
