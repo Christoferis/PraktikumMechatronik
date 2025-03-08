@@ -103,6 +103,7 @@ class transport_protocol:
 class communication_protocol:
 
     def _accept(self, command):
+        raise NotImplementedError
         pass
     pass
 

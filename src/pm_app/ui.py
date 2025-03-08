@@ -14,14 +14,70 @@ from analog import gamepad
 from analog.mapping import GenericPS1ButtonMap as button_map
 from analog.mapping import GenericPS1DpadMap as dpad_map
 from analog.mapping import AxisMax
+from constants import MIN_LOG_LVL
 from logging import root as logger
+import logging
 
+# classes
+class window_log_handler(logging.Handler):
+
+    def __init__(self, window: tk.Text, combo, level = logging.INFO):
+        super().__init__()
+        self.window = window
+        self.level = level
+        self.combo = combo
+
+    def emit(self, record):
+
+        if record.levelno >= self.level:
+            self.window.config(state="normal")
+            self.window.insert("1.0", "[" + record.levelname + "] " + record.msg + "\n")
+            self.window.config(state="disabled")
+
+    #clears the entire window
+    def clear_window(self):
+        self.window.config(state="normal")
+        self.window.delete("1.0", "end")
+        self.window.config(state="disabled")
+    
+    # change of level should also clear the window
+    def change_level(self, level):
+        if self.level != level:
+            self.level = level
+            self.clear_window()
+
+# functions
+def update_left(xy):
+    x_val = (xy[0] * 100) // (AxisMax * 2) + 50
+    y_val = (xy[1] * 100) // (AxisMax * 2) + 50
+    axis_states[0].set(x_val)
+    axis_states[1].set(y_val)
+
+
+def update_right(xy):
+    x_val = (xy[0] * 100) // (AxisMax * 2) + 50
+    y_val = (xy[1] * 100) // (AxisMax * 2) + 50
+    axis_states[2].set(x_val)
+    axis_states[3].set(y_val)
+
+def update_dpad(dpad):
+    l_dpad.config(text=f"DPad: {dpad_map(dpad).name}")
+
+
+def update_buttons(states):
+    text = "Buttons: " + ", ".join([str(button_map(i).name) for i, state in enumerate(states) if state])
+    l_buttons.config(text=text)
+
+# setup
 root = tk.Tk()
-root.title("Gamepad Test")
+root.title("Robot Control")
 
-f_sticks = tk.Frame(root)
+gamepad = ttk.Labelframe(root, text="Gamepad")
+gamepad.pack(side=tk.TOP)
+
+f_sticks = tk.Frame(gamepad)
 f_sticks.pack(side=tk.TOP)
-f_buttons = tk.Frame(root)
+f_buttons = tk.Frame(gamepad)
 f_buttons.pack(side=tk.BOTTOM, fill=tk.X, expand=True)
 
 f_stick_left = tk.Frame(f_sticks)
@@ -55,27 +111,27 @@ p_stick_right_y.step(50)
 p_stick_right_x.step(50)
 
 # Protocol Window, Ping and connect Section
+protocol = tk.LabelFrame(root, text="Protocol")
+protocol.pack(side=tk.BOTTOM)
 
+log = tk.Frame(protocol)
+log.pack(side=tk.LEFT)
 
-def update_left(xy):
-    x_val = (xy[0] * 100) // (AxisMax * 2) + 50
-    y_val = (xy[1] * 100) // (AxisMax * 2) + 50
-    axis_states[0].set(x_val)
-    axis_states[1].set(y_val)
+logwindow = tk.Text(log, wrap="word", state="disabled")
+logwindow.pack(side=tk.BOTTOM)
 
+combo_values = ["DEBUG", "INFO", "WARNING", "CRITICAL"]
+logcombo = ttk.Combobox(log, values=combo_values, state="readonly")
+logcombo.set("INFO")
+logcombo.pack(side=tk.TOP)
 
-def update_right(xy):
-    x_val = (xy[0] * 100) // (AxisMax * 2) + 50
-    y_val = (xy[1] * 100) // (AxisMax * 2) + 50
-    axis_states[2].set(x_val)
-    axis_states[3].set(y_val)
+# create window log handler
+whandler = window_log_handler(window=logwindow, combo=logcombo)
 
-def update_dpad(dpad):
-    l_dpad.config(text=f"DPad: {dpad_map(dpad).name}")
+# lambda: grabs level from dictionary logging._nameToLevel from the current(index of combo_values) selection
+logcombo.bind("<<ComboboxSelected>>", func=lambda s: whandler.change_level(logging._nameToLevel[combo_values[logcombo.current()]]))
 
-
-def update_buttons(states):
-    text = "Buttons: " + ", ".join([str(button_map(i).name) for i, state in enumerate(states) if state])
-    l_buttons.config(text=text)
+# add to rootlogger
+logger.addHandler(whandler)
 
 root.mainloop()
