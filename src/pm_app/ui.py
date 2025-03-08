@@ -14,6 +14,7 @@ from analog import gamepad
 from analog.mapping import GenericPS1ButtonMap as button_map
 from analog.mapping import GenericPS1DpadMap as dpad_map
 from analog.mapping import AxisMax
+from logging import root as logger
 
 root = tk.Tk()
 root.title("Gamepad Test")
@@ -54,7 +55,6 @@ p_stick_right_y.step(50)
 p_stick_right_x.step(50)
 
 # Protocol Window, Ping and connect Section
-
 
 
 def update_left(xy):

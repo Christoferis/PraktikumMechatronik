@@ -1,6 +1,7 @@
 # A file for defining constants, like a config file
 
 from platform import system
+from logging import DEBUG, WARNING, INFO, CRITICAL
 
 # Generic Data
 PLATFORM = system()
@@ -15,6 +16,7 @@ PORT_DEST = "24"
 PINGINTERVAL = 5
 
 # Logging
+MIN_LOG_LVL = DEBUG
 
 # Bytes
 MAX_MSG_LEN = 64

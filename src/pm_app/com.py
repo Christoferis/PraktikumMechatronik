@@ -11,7 +11,7 @@ from threading import Thread, Semaphore
 from socket import create_connection
 # from constants import IP_DEST, PORT_DEST
 from constants import MAX_MSG_LEN, PINGINTERVAL
-from logging import warning, info, debug, critical
+from logging import warning, info, debug, critical, basicConfig, DEBUG
 from time import time
 
 class transport_protocol:
@@ -77,13 +77,13 @@ class transport_protocol:
                 counter = time()
                 self.ping = 0
                 pingprogress = True
-                self.send("m\r")
+                self.send("m\r", True)
                 pass
             elif pingprogress:
                 self.ping = time() - counter
         pass
 
-    def send(self, msg):
+    def send(self, msg, ping = False):
         with self.sema:
             byte = msg.encode()
             sent = 0
@@ -93,7 +93,11 @@ class transport_protocol:
                 pass
         pass
 
-        add_log("o: " + msg, log_level.INFO)
+        if not ping:
+            info("o: " + msg)
+        else:
+            debug("o: " + msg)
+
     pass
 
 class communication_protocol:
@@ -102,9 +106,9 @@ class communication_protocol:
         pass
     pass
 
-# run thread after init
-
 
 if __name__ == "__main__":
+    basicConfig(format='[%(levelname)s] %(message)s', level=DEBUG)
+
     tp = transport_protocol("localhost", 23000, communication_protocol())
 

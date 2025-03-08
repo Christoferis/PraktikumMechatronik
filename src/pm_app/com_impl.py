@@ -22,6 +22,8 @@ class com_impl(communication_protocol):
         self.tp = TransportProtocol(ip, port, self)
 
     def _acquire(self, command):
+        # TODO: Redo this because, the fuck was I thinking?
+
         self.waiting[command.removeprefix("a")] = False
         pass
 

@@ -61,3 +61,30 @@ Designation as defined in mapping.py
 |Designation|Bedeutung|
 |-|-|
 |a<buttoncombo>|acknowledged: Button Combo wurde erfolgreich ausgeführt|
+
+### Implementation Specifics
+Das ProtocolStack wurde folgendermaßen in Python implementiert:
+
+#### pm_CommunicationProtocol (com_impl.py)
+- Es wurden beim Gamepad Handler alle Callbacks regristiert
+- Callbacks werden pro Tick aufgerufen (CB_Always)
+- in com_impl funktion msg_bundle -> bündelt alle vom Controller kommenden Funktionen
+    - msg_bundle wird unter der globalen INSTANCE Variable in cb_buttons aufgerufen, da durch CB_Always der Button Callback immer, und immer als letztes aufgerufen wird
+    - dies wurde gemacht um einen Thread (der wiederum irgendwo instanziert werden muss) zu sparen
+
+#### TransportProtocol und CommunicationInterface (com.py)
+- CommunicationInterface als "abstrakte" communication_protocol Klasse implementiert, von der alle CommunicationProtos erben sollen
+- Sink wird als Thread aufgerufen
+- send hat ping attribut um zwischen logging ping und normalen messages zu unterscheiden
+- send hat ein Python Semaphor Objekt um Thread Safety und schicken aus mehreren Threads zu gewärleisten (Der Reihe nach nach Semaphor, oder so zumindest in der Theorie)
+
+#### Logging
+Logging wird durch das Python eigenes logging Modul gewärleistet, gegen Konvention (aber in ProtocolStack Konvention) wird der Root Logger für alles verwendet.
+Logging Levels sind durch das logging Modul wiefolgt:
+
+|ProtocolStack|logging|
+|-|-|
+|PING|logging.DEBUG|
+|INFO|logging.INFO|
+|SPECIAL|logging.WARNING|
+|CRITICAL|logging.CRITICAL|
