@@ -1,26 +1,23 @@
 '''
-ProtocolStackV2 compatible logging library
+ProtocolStackV2 compatible logging library using pythons own Logging library
 '''
 
 from enum import Enum
-
+import logging
 
 # globals
 GLOBAL_LOG_LEVEL = 1
 _log = list()
+_listener = {log_level.PING : [], log_level.INFO: [], log_level.SPECIAL: [], log_level.CRITICAL: []}
 
-
-class log_level(Enum):
-    PING = 0
-    INFO = 1
-    SPECIAL = 2
-    CRITICAL = 3
-
-
-def add_log(string, level):
-    _log.append((string, level))
+def add_log(string, level = log_level.INFO):
+    _log.append((level, string))
     pass
 
-def add_log(string):
-    _log.append(string)
+'''
+level: at which level the callback should be triggered (if callback should apply to multiple levels: register the same function with different levels)
+function: a callback that accepts a String (for the message)
+'''
+def add_callback(function, level = log_level.INFO):
+    _listener[level].append(function)
     pass

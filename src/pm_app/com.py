@@ -11,26 +11,22 @@ from threading import Thread, Semaphore
 from socket import create_connection
 # from constants import IP_DEST, PORT_DEST
 from constants import MAX_MSG_LEN, PINGINTERVAL
-from log import add_log, log_level
+from logging import warning, info, debug, critical
 from time import time
 
 class transport_protocol:
 
-    self.sink = Thread(None, _background, "Sink", [self])
-    self.stop = False
-    self.sema = Semaphore()
-    self.socket = None
-    self.connection = None
-    self.protocol = None
-    self.ping = 0
-
     def __init__(self, ip, port, protocol):
+        self.stop = False
+        self.sema = Semaphore()
+        self.ping = 0
+        self.sink = Thread(None, self._background, "Sink")
+        
         #open socket
         self.socket = create_connection((ip, port), 0.1)
         self.protocol = protocol
-        self.sink.isDaemon(True)
         self.sink.start()
-        print("Dispatched Sink Daemon")
+        warning("Dispatched Sink Thread")
         pass
 
     def close(self):
@@ -55,21 +51,24 @@ class transport_protocol:
                 msg = tup[0].decode()
                 buffer = tup[2]
 
-            if not (msg.isspace() or msg is ""):
-                if msg.startswith("e"):
-                    add_log("i: " + msg, log_level.SPECIAL)
-                else:
-                    add_log("i: " + msg)
+            if not (msg.isspace() or msg == ""):
 
-                if msg.startswith("r"):
+                if msg.startswith("e"):
+                    warning("i: " + msg)
+
+                elif msg.startswith("r"):
+                    info("i: " + msg)
                     self.protocol._accept(msg.removeprefix("r"))
 
                 elif msg.startswith("m"):
+                    debug("i: " + msg)
                     self.send("p\r")
 
                 elif msg.startswith("p"):
+                    debug("i: " + msg)
                     pingprogress = False
-                    counter = time()                    
+                    counter = time()
+                
                 else:
                     add_log("o: e404")
                 
@@ -104,3 +103,8 @@ class communication_protocol:
     pass
 
 # run thread after init
+
+
+if __name__ == "__main__":
+    tp = transport_protocol("localhost", 23000, communication_protocol())
+
