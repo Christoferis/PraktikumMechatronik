@@ -3,7 +3,11 @@ import logging
 from constants import MIN_LOG_LVL
 from com import pm_CommunicationProtocol
 from gp_layer import instance as gp_instance
-import ui
+from tkinter import Tk
+from ui import instance as ui_instance
+
+root = Tk()
+root.title("Robot Control")
 
 logging.basicConfig(format='[%(levelname)s] %(message)s', level=MIN_LOG_LVL)
 
@@ -11,7 +15,4 @@ logging.basicConfig(format='[%(levelname)s] %(message)s', level=MIN_LOG_LVL)
 com = pm_CommunicationProtocol("localhost", 23000)
 
 gp_instance(com)
-ui.instance(com)
-
-# import and run other things
-import ui
+ui_instance(com, root=root)

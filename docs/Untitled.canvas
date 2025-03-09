@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"c7bcd52296441f15","x":60,"y":-260,"width":250,"height":60,"type":"text","text":"com"},
+		{"id":"6ba436c80519bdba","x":-780,"y":-460,"width":280,"height":160,"type":"text","text":"gp_layer"},
+		{"id":"48ade055e1fd922e","x":-420,"y":100,"width":250,"height":60,"type":"text","text":"ui"}
+	],
+	"edges":[
+		{"id":"df99885c35359ec9","fromNode":"6ba436c80519bdba","fromSide":"bottom","toNode":"48ade055e1fd922e","toSide":"left","label":"callback functions"},
+		{"id":"3ec5ccff9d04e6ec","fromNode":"6ba436c80519bdba","fromSide":"right","toNode":"c7bcd52296441f15","toSide":"top","label":"msg_bundle"},
+		{"id":"5663d0756165da1d","fromNode":"48ade055e1fd922e","fromSide":"right","toNode":"c7bcd52296441f15","toSide":"bottom","label":"ping, change connection"}
+	]
+}

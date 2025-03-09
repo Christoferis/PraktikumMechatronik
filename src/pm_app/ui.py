@@ -76,14 +76,13 @@ def update_buttons(states):
 
 # setup
 
-def instance(com):
+def instance(com, root):
     global l_dpad
     global l_buttons
     global axis_states
     global f_buttons
 
-    root = tk.Tk()
-    root.title("Robot Control")
+    # creating root window in main
 
     gamepad = ttk.Labelframe(root, text="Gamepad")
     gamepad.pack(side=tk.TOP)
@@ -131,7 +130,7 @@ def instance(com):
     connect.pack(side=tk.RIGHT)
 
     # conncectivity part
-    ping = tk.Label(connect, text="Current Ping: ", textvariable=INSTANCE.get_ping())
+    ping = tk.Label(connect, text="Current Ping: ", textvariable=com.get_ping())
     ping.pack(side=tk.TOP)
 
     # logging part
@@ -156,3 +155,16 @@ def instance(com):
     logger.addHandler(whandler)
 
     root.mainloop()
+
+
+# test
+if __name__ == "__main__":
+    from com import transport_protocol, communication_protocol
+    from tkinter import Tk
+
+    window = Tk()
+    window.title("Robot Center")
+
+    t = transport_protocol("localhost", 23000, communication_protocol())
+
+    instance(t, window)
