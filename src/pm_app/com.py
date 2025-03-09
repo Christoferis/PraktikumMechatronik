@@ -47,6 +47,9 @@ class transport_protocol:
 
             try:
                 buffer = buffer.join([self.socket.recv(MAX_MSG_LEN)])
+            except ConnectionResetError:
+                # auto reconnect
+                pass
             except TimeoutError:
                 pass
 
@@ -105,6 +108,9 @@ class transport_protocol:
     # returns intvar object
     def get_ping(self):
         return self.ping
+
+    def reconnect(self):
+        pass
     pass
 
 class communication_protocol:
@@ -127,9 +133,14 @@ class pm_CommunicationProtocol(communication_protocol):
         self.tp = transport_protocol(ip, port, self)
 
     def _acquire(self, command):
-        # TODO: Redo this because, the fuck was I thinking?
 
-        self.waiting[command.removeprefix("a")] = False
+        if "ab" in command:
+            self.waiting.remove(command.removeprefix("ab"))
+        elif "aj" in command:
+            pass
+        else:
+            warning("o: e504")
+
         pass
 
     def msg_bundle(self, joystick, dpad_state, buttons):
@@ -158,6 +169,10 @@ class pm_CommunicationProtocol(communication_protocol):
     
     def get_ping(self):
         return self.tp.get_ping()
+
+    # TODO: Reconnect
+    def reconnect(self):
+        pass
 
     pass
 
