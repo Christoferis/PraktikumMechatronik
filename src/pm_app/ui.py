@@ -130,8 +130,10 @@ def instance(com, root):
     connect.pack(side=tk.RIGHT)
 
     # conncectivity part
-    ping = tk.Label(connect, text="Current Ping: ", textvariable=com.get_ping())
-    ping.pack(side=tk.TOP)
+    pingText = tk.Label(connect, text="Current Ping: ")
+    pingText.pack(side=tk.TOP)
+    ping = tk.Label(connect, textvariable=com.get_ping())
+    ping.pack(side=tk.BOTTOM)
 
     # logging part
     log = tk.Frame(protocol)
@@ -161,6 +163,8 @@ def instance(com, root):
 if __name__ == "__main__":
     from com import transport_protocol, communication_protocol
     from tkinter import Tk
+
+    logging.basicConfig(format='[%(levelname)s] %(message)s', level=MIN_LOG_LVL)
 
     window = Tk()
     window.title("Robot Center")

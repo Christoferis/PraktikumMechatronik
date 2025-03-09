@@ -163,5 +163,11 @@ class pm_CommunicationProtocol(communication_protocol):
 
 
 if __name__ == "__main__":
+    from tkinter import Tk
+
+    f = Tk()
+
     basicConfig(format='[%(levelname)s] %(message)s', level=DEBUG)
     tp = transport_protocol("localhost", 23000, communication_protocol())
+
+    f.mainloop()
