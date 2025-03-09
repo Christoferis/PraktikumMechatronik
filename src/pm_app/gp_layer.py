@@ -13,7 +13,6 @@ from analog.mapping import GenericPS1ButtonMap as button_map
 from analog.mapping import GenericPS1DpadMap as dpad_map
 from analog.mapping import AxisMax
 from ui import update_left, update_right, update_dpad, update_buttons
-from com_impl import INSTANCE
 
 # list(r, l), with l, r: tuple(x,y)
 joystick = list()
@@ -23,6 +22,8 @@ buttons = list()
 
 # single value
 dpad = dpad_map.NONE
+
+com_INSTANCE = None
 
 # input is tuple
 def cb_left(xy: tuple[int, int]):
@@ -37,9 +38,9 @@ def cb_right(xy: tuple[int, int]):
     update_right(xy)
 
 # input is single value
-def cb_dpad(dpad: int):
+def cb_dpad(dpad_state: int):
     global dpad
-    dpad = dpad
+    dpad = dpad_state
 
     update_dpad(dpad)
 
@@ -55,9 +56,13 @@ def cb_buttons(states: list[bool]):
     INSTANCE.msg_bundle(joystick, dpad, buttons)
 
 
-gph = gamepad.GamepadHandler(freq=100)
-gph.add_left_stick_callback(cb_left, gph.CB_ALWAYS)
-gph.add_right_stick_callback(cb_right, gph.CB_ALWAYS)
-gph.add_dpad_callback(cb_dpad, gph.CB_ALWAYS)
-gph.add_all_buttons_callback(cb_buttons, gph.CB_ALWAYS)
-gph.start()
+def instance(com):
+    global com_INSTANCE
+    com_INSTANCE = com
+
+    gph = gamepad.GamepadHandler(freq=100)
+    gph.add_left_stick_callback(cb_left, gph.CB_ALWAYS)
+    gph.add_right_stick_callback(cb_right, gph.CB_ALWAYS)
+    gph.add_dpad_callback(cb_dpad, gph.CB_ALWAYS)
+    gph.add_all_buttons_callback(cb_buttons, gph.CB_ALWAYS)
+    gph.start()

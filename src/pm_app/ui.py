@@ -18,6 +18,12 @@ from constants import MIN_LOG_LVL
 from logging import root as logger
 import logging
 
+# attributes
+
+l_dpad = None
+axis_states = []
+l_buttons = None
+
 # classes
 class window_log_handler(logging.Handler):
 
@@ -69,69 +75,84 @@ def update_buttons(states):
     l_buttons.config(text=text)
 
 # setup
-root = tk.Tk()
-root.title("Robot Control")
 
-gamepad = ttk.Labelframe(root, text="Gamepad")
-gamepad.pack(side=tk.TOP)
+def instance(com):
+    global l_dpad
+    global l_buttons
+    global axis_states
+    global f_buttons
 
-f_sticks = tk.Frame(gamepad)
-f_sticks.pack(side=tk.TOP)
-f_buttons = tk.Frame(gamepad)
-f_buttons.pack(side=tk.BOTTOM, fill=tk.X, expand=True)
+    root = tk.Tk()
+    root.title("Robot Control")
 
-f_stick_left = tk.Frame(f_sticks)
-f_stick_left.pack(side=tk.LEFT)
-f_stick_right = tk.Frame(f_sticks)
-f_stick_right.pack(side=tk.RIGHT)
+    gamepad = ttk.Labelframe(root, text="Gamepad")
+    gamepad.pack(side=tk.TOP)
 
-l_buttons = tk.Label(f_buttons, text="Buttons:")
-l_buttons.pack(side=tk.LEFT, expand=True, anchor=tk.W)
-l_dpad = tk.Label(f_buttons, text=f"DPad: {dpad_map.NONE.name}")
-l_dpad.pack(side=tk.RIGHT)
+    f_sticks = tk.Frame(gamepad)
+    f_sticks.pack(side=tk.TOP)
+    f_buttons = tk.Frame(gamepad)
+    f_buttons.pack(side=tk.BOTTOM, fill=tk.X, expand=True)
 
-axis_states = [tk.IntVar(), tk.IntVar(), tk.IntVar(), tk.IntVar()]
-p_stick_left_y = ttk.Progressbar(f_stick_left, orient=tk.VERTICAL, length=200, mode='indeterminate',
-                                 variable=axis_states[1])
-p_stick_left_y.pack(side=tk.LEFT)
-p_stick_left_x = ttk.Progressbar(f_stick_left, orient=tk.HORIZONTAL, length=200, mode='indeterminate',
-                                 variable=axis_states[0])
-p_stick_left_x.pack(side=tk.LEFT)
+    axis_states = [tk.IntVar(), tk.IntVar(), tk.IntVar(), tk.IntVar()]
+    f_stick_left = tk.Frame(f_sticks)
+    f_stick_left.pack(side=tk.LEFT)
+    f_stick_right = tk.Frame(f_sticks)
+    f_stick_right.pack(side=tk.RIGHT)
 
-p_stick_right_y = ttk.Progressbar(f_stick_right, orient=tk.VERTICAL, length=200, mode='indeterminate',
-                                  variable=axis_states[3])
-p_stick_right_y.pack(side=tk.RIGHT)
-p_stick_right_x = ttk.Progressbar(f_stick_right, orient=tk.HORIZONTAL, length=200, mode='indeterminate',
-                                  variable=axis_states[2])
-p_stick_right_x.pack(side=tk.RIGHT)
+    l_buttons = tk.Label(f_buttons, text="Buttons:")
+    l_buttons.pack(side=tk.LEFT, expand=True, anchor=tk.W)
+    l_dpad = tk.Label(f_buttons, text=f"DPad: {dpad_map.NONE.name}")
+    l_dpad.pack(side=tk.RIGHT)
 
-p_stick_left_y.step(50)
-p_stick_left_x.step(50)
-p_stick_right_y.step(50)
-p_stick_right_x.step(50)
+    p_stick_left_y = ttk.Progressbar(f_stick_left, orient=tk.VERTICAL, length=200, mode='indeterminate',
+                                    variable=axis_states[1])
+    p_stick_left_y.pack(side=tk.LEFT)
+    p_stick_left_x = ttk.Progressbar(f_stick_left, orient=tk.HORIZONTAL, length=200, mode='indeterminate',
+                                    variable=axis_states[0])
+    p_stick_left_x.pack(side=tk.LEFT)
 
-# Protocol Window, Ping and connect Section
-protocol = tk.LabelFrame(root, text="Protocol")
-protocol.pack(side=tk.BOTTOM)
+    p_stick_right_y = ttk.Progressbar(f_stick_right, orient=tk.VERTICAL, length=200, mode='indeterminate',
+                                    variable=axis_states[3])
+    p_stick_right_y.pack(side=tk.RIGHT)
+    p_stick_right_x = ttk.Progressbar(f_stick_right, orient=tk.HORIZONTAL, length=200, mode='indeterminate',
+                                    variable=axis_states[2])
+    p_stick_right_x.pack(side=tk.RIGHT)
 
-log = tk.Frame(protocol)
-log.pack(side=tk.LEFT)
+    p_stick_left_y.step(50)
+    p_stick_left_x.step(50)
+    p_stick_right_y.step(50)
+    p_stick_right_x.step(50)
 
-logwindow = tk.Text(log, wrap="word", state="disabled")
-logwindow.pack(side=tk.BOTTOM)
+    # Protocol Window, Ping and connect Section
+    protocol = tk.LabelFrame(root, text="Protocol")
+    protocol.pack(side=tk.BOTTOM)
 
-combo_values = ["DEBUG", "INFO", "WARNING", "CRITICAL"]
-logcombo = ttk.Combobox(log, values=combo_values, state="readonly")
-logcombo.set("INFO")
-logcombo.pack(side=tk.TOP)
+    connect = tk.Frame(protocol)
+    connect.pack(side=tk.RIGHT)
 
-# create window log handler
-whandler = window_log_handler(window=logwindow, combo=logcombo)
+    # conncectivity part
+    ping = tk.Label(connect, text="Current Ping: ", textvariable=INSTANCE.get_ping())
+    ping.pack(side=tk.TOP)
 
-# lambda: grabs level from dictionary logging._nameToLevel from the current(index of combo_values) selection
-logcombo.bind("<<ComboboxSelected>>", func=lambda s: whandler.change_level(logging._nameToLevel[combo_values[logcombo.current()]]))
+    # logging part
+    log = tk.Frame(protocol)
+    log.pack(side=tk.LEFT)
 
-# add to rootlogger
-logger.addHandler(whandler)
+    logwindow = tk.Text(log, wrap="word", state="disabled")
+    logwindow.pack(side=tk.BOTTOM)
 
-root.mainloop()
+    combo_values = ["DEBUG", "INFO", "WARNING", "CRITICAL"]
+    logcombo = ttk.Combobox(log, values=combo_values, state="readonly")
+    logcombo.set("INFO")
+    logcombo.pack(side=tk.TOP)
+
+    # create window log handler
+    whandler = window_log_handler(window=logwindow, combo=logcombo)
+
+    # lambda: grabs level from dictionary logging._nameToLevel from the current(index of combo_values) selection
+    logcombo.bind("<<ComboboxSelected>>", func=lambda s: whandler.change_level(logging._nameToLevel[combo_values[logcombo.current()]]))
+
+    # add to rootlogger
+    logger.addHandler(whandler)
+
+    root.mainloop()
