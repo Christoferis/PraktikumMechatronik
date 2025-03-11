@@ -2,35 +2,36 @@
 #include "prottrans.h"
 #include "simpletools.h"
 #include "protutil.h"
+#include "buttons.h"
 
 void receive(char msg[])
 {
-    //one byte command header
-  char* datablock = msg + 1;
-  
-  switch (msg[0])
-  {
-    case COMMAND_CTRL_SWITCH_MODE:
-        switchmode(datablock);
-        break;
+    // check for parts: b is not always present but j is.
+    char* joystick = strchrm(msg, 'j');
 
-    case COMMAND_CTRL_FOLLOW_PATH:
-        followpath(datablock);
-        break;
+    // button part (pointer diff if button part present)
+    if (joystick != msg)
+    {
+        // all writes btw are on "global" msg array
+        *(joystick - 1) = '\r';
+        processbuttons(msg);
+    }
 
-    case COMMAND_CTRL_ULTRA_SWEEP:
-        deepsweep(datablock);
-        break;
+    //joystick part
 
-    case COMMAND_CTRL_TEST:
-        testlight(datablock);
-        break;
-
-    default:
-        senderror(4);
-        break;
-  }
 }
+
+
+void processbuttons(char buttons[])
+{
+    // max possible pressed buttons at one time: 13; 3 for designation
+    char pressed[13][3];
+    int splits = strtokm(buttons, ';', pressed);
+
+    
+
+}
+
 
 void sendintarray(char command, int* array, int len)
 {

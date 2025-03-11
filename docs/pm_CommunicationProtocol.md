@@ -50,7 +50,6 @@ Designation as defined in mapping.py
 | d6          | PS D-Pad Left        |
 | d7          | Up + Left            |
 | 14          | None                 |
-
 ##### Joystick
 |Designation|Description|Data|
 |-|-|-|

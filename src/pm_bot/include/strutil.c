@@ -31,7 +31,7 @@ int strntok (char* string, char delimiter)
   return count;
 }
 
-int strtok(char* string, char delim, char** dest)
+int strtokm(char* string, char delim, char** dest)
 {
   int i = 0;
   int splits = 0; 

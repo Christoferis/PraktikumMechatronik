@@ -6,6 +6,9 @@
 // returns the amount of times a stringcan be split by a delimiter
 int strntok (char* string, char delimiter);
 
+// splits a string into substrings by delimiter
+int strtokm(char* string, char delimiter, char **destination)
+
 // finds first occurence of a char in a string
 char* strchrm(char* string, char c);
 
