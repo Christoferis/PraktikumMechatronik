@@ -15,7 +15,6 @@ from logging import warning, info, debug, critical, basicConfig, DEBUG
 from time import time, sleep
 from tkinter import IntVar
 
-
 class transport_protocol:
 
     def __init__(self, ip, protocol):

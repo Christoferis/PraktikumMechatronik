@@ -19,37 +19,37 @@ Messages des CP bestehen aus:
 - 2 byte name designation
 - csv typed array
 
-|Designation|Bedeutung|
-|-|-|
-|j|joystick|
-|b|button|
+| Designation | Bedeutung |
+| ----------- | --------- |
+| j           | joystick  |
+| b           | button    |
 
 ##### Button
 Designation as defined in mapping.py
 
-|Designation|Bedeutung|
-|-|-|
-|00| Playstation X Button|
-|01| PS Triangle Button|
-|02| PS O Button|
-|03| PS Square Button|
-|04| shoulder left|
-|05| shoulder right|
-|06| trigger left|
-|07| trigger right|
-|08| select|
-|09| start|
-|10| PS L3|
-|11| PS R3|
-|d0| PS D-Pad Up|
-|d1| Up + Right|
-|d2| PS D-Pad Right|
-|d3| Down + Right|
-|d4| PS D-Pad Down|
-|d5| Down + Left|
-|d6| PS D-Pad Left|
-|d7| Up + Left|
-|14| None|
+| Designation | Bedeutung            |
+| ----------- | -------------------- |
+| 00          | Playstation X Button |
+| 01          | PS Triangle Button   |
+| 02          | PS O Button          |
+| 03          | PS Square Button     |
+| 04          | shoulder left        |
+| 05          | shoulder right       |
+| 06          | trigger left         |
+| 07          | trigger right        |
+| 08          | select               |
+| 09          | start                |
+| 10          | PS L3                |
+| 11          | PS R3                |
+| d0          | PS D-Pad Up          |
+| d1          | Up + Right           |
+| d2          | PS D-Pad Right       |
+| d3          | Down + Right         |
+| d4          | PS D-Pad Down        |
+| d5          | Down + Left          |
+| d6          | PS D-Pad Left        |
+| d7          | Up + Left            |
+| 14          | None                 |
 
 ##### Joystick
 |Designation|Description|Data|

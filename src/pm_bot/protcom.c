@@ -1,13 +1,7 @@
 #include "protcom.h"
 #include "prottrans.h"
 #include "simpletools.h"
-#include "constants.h"
 #include "protutil.h"
-#include <stdlib.h>
-
-#include "mode_switch.h"
-#include "mode_1_manual.h"
-
 
 void receive(char msg[])
 {

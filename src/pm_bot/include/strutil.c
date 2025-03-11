@@ -31,6 +31,29 @@ int strntok (char* string, char delimiter)
   return count;
 }
 
+int strtok(char* string, char delim, char** dest)
+{
+  int i = 0;
+  int splits = 0; 
+  int sec = 0; 
+  char c = string[i];
+  
+  // to prevent redundant code 
+  while((c = string[i]) != '\r' && (++i) == i) {
+    if (c != delim) {
+      dest[splits][sec] = string[i];
+      sec++;
+    } else {
+      splits++;
+      sec = 0; 
+    }
+  }
+
+  return splits + 1;
+}
+
+
+
 // finds a certain character in a string and returns a pointer to that spot
 char *strchrm(char *string, char c)
 {
@@ -58,6 +81,24 @@ char *strchrm(char *string, char c)
   }
 }
 
+//TODO: match stringarray method
+
+// compares two strings
+int strcmp(char *str1, char *str2)
+{
+  int i = 0;
+
+  for (int i = 0; (i < MAX_LEN) && str1[i] == str2[i]; i++)
+  {
+    if (str1[i] == '\r' || str1[i] == '\0')
+    {
+      return 1;
+    }
+
+    return 0;
+  }
+
+}
 
 // converts a string into a integer
 // stops either when a char is not a number or if end of string
@@ -119,7 +160,6 @@ int isnumeric(char c)
 {
   return c >= 48 && c <= 57;
 }
-
 
 //make sure to flush appropriately
 void flushstr(char* string, int len)

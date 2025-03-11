@@ -4,6 +4,7 @@
 
 #include "simpletools.h"
 #include "protcom.h"
+#include "servo360.h"
 
 int main(void)
 {
