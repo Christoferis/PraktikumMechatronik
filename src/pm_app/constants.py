@@ -14,6 +14,7 @@ PORT_DEST = "24"
 ## Transport
 # pinginterval: how frequent the ping message should be sent out (as in how long to wait since the previous ping operation has concluded, in seconds)
 PINGINTERVAL = 1
+CON_RETRY = 2
 
 # Logging
 MIN_LOG_LVL = DEBUG

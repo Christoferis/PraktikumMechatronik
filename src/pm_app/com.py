@@ -10,24 +10,25 @@ Consists of:
 from threading import Thread, Semaphore
 from socket import create_connection
 # from constants import IP_DEST, PORT_DEST
-from constants import MAX_MSG_LEN, PINGINTERVAL
+from constants import MAX_MSG_LEN, PINGINTERVAL, CON_RETRY
 from logging import warning, info, debug, critical, basicConfig, DEBUG
-from time import time
+from time import time, sleep
 from tkinter import IntVar
 
 
 class transport_protocol:
 
-    def __init__(self, ip, port, protocol):
+    def __init__(self, ip, protocol):
         self.stop = False
         self.sema = Semaphore()
         self.sink = Thread(None, self._background, "Sink")
+        self.ip = ip
 
         # ui bridging -> use IntVar object for everything instead of ping and seperate intvar object 
         self.ping = IntVar()
         
         #open socket
-        self.socket = create_connection((ip, port), 0.1)
+        self.reconnect(ip)
         self.protocol = protocol
         self.sink.start()
         warning("Dispatched Sink Thread")
@@ -46,10 +47,24 @@ class transport_protocol:
             msg = ""
 
             try:
-                buffer = buffer.join([self.socket.recv(MAX_MSG_LEN)])
+                char = self.socket.recv(MAX_MSG_LEN)
+                buffer += char
+
+                if char == b'':
+                    while True:
+                        if self.reconnect(self.ip):
+                            break
+
+                        sleep(CON_RETRY)
             except ConnectionResetError:
-                # auto reconnect
+
+                while True:
+                    if self.reconnect(self.ip):
+                        break
+
+                    sleep(CON_RETRY)
                 pass
+
             except TimeoutError:
                 pass
 
@@ -109,7 +124,21 @@ class transport_protocol:
     def get_ping(self):
         return self.ping
 
-    def reconnect(self):
+    def reconnect(self, ip):
+        warning("Reconnecting to " + ip[0] + ":" + str(ip[1]))
+
+        try:
+            self.socket.close()
+            self.socket = create_connection(ip, 0.1)
+
+        except Exception as e:
+            critical(e)
+            return False
+        else:
+            warning("Reconnect Successful")
+            return True
+            pass 
+
         pass
     pass
 
@@ -125,12 +154,12 @@ class pm_CommunicationProtocol(communication_protocol):
 
     # blocking by writing a value under the right key (boolean?)
 
-    def __init__(self, ip, port):
+    def __init__(self, ip):
         self.waiting = list()
         self.tp = None
 
         # create a transport Protocol with given values
-        self.tp = transport_protocol(ip, port, self)
+        self.tp = transport_protocol(ip, self)
 
     def _acquire(self, command):
 
@@ -178,11 +207,13 @@ class pm_CommunicationProtocol(communication_protocol):
 
 
 if __name__ == "__main__":
-    from tkinter import Tk
+    from tkinter import Tk, Button
 
     f = Tk()
 
     basicConfig(format='[%(levelname)s] %(message)s', level=DEBUG)
-    tp = transport_protocol("localhost", 23000, communication_protocol())
+    tp = transport_protocol(("localhost", 23000), communication_protocol())
+
+    Button(f, text="Reconnect", command=lambda: tp.reconnect(ip=tp.ip)).pack()
 
     f.mainloop()

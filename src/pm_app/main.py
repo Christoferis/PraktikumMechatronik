@@ -15,7 +15,7 @@ logging.basicConfig(format='[%(levelname)s] %(message)s', level=MIN_LOG_LVL)
 print(argv)
 
 # create com_impl instance
-com = pm_CommunicationProtocol(argv[1], int(argv[2]))
+com = pm_CommunicationProtocol((argv[1], int(argv[2])))
 
 gp_instance(com)
 ui_instance(com, root=root)

@@ -19,7 +19,6 @@ from logging import root as logger
 import logging
 
 # attributes
-
 l_dpad = None
 axis_states = []
 l_buttons = None
@@ -169,6 +168,6 @@ if __name__ == "__main__":
     window = Tk()
     window.title("Robot Center")
 
-    t = transport_protocol("localhost", 23000, communication_protocol())
+    t = transport_protocol(("localhost", 23000), communication_protocol())
 
     instance(t, window)
