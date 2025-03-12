@@ -9,7 +9,7 @@ Messages der Kategorie Joystick erwarten keine Antwort.
 
 Solange ein gedrückter Button keine Antwort erhalten hat, soll dieser Button von weiterem betätigen geblockt werden.
 
-Messages von Host an den Bot können gebündelt werden (N-Key Rollover für Controller). Sie werden mit einem Semikolon geteilt und somit gebündelt
+Messages von Host an den Bot können gebündelt werden (N-Key Rollover für Controller). Sie werden mit einem Semikolon geteilt und somit gebündelt. Das Bündel sollte klar zwischen Buttons und Joysticks geteilt werden, i. a. w. es sollte nicht gemischt werden.
 
 ### Definition
 
@@ -57,9 +57,9 @@ Designation as defined in mapping.py
 | l           | Left Joystick  | Tuple(x, y) in Range (0,1000), Midpoint 500  |
 
 #### Bot -> Host
-|Designation|Bedeutung|
-|-|-|
-|a<buttoncombo>|acknowledged: Button Combo wurde erfolgreich ausgeführt|
+| Designation    | Bedeutung                                                  |
+| -------------- | ---------------------------------------------------------- |
+| a<buttoncombo> | acknowledged: Button wurde erfolgreich ausgeführt (ab00\r) |
 
 ### Implementation Specifics
 Das ProtocolStack wurde folgendermaßen in Python implementiert:

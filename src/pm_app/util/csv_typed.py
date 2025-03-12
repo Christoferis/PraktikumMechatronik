@@ -12,4 +12,7 @@ def convert_from(csv):
     return out
 
 def convert_to(array):
+    if type(array) == tuple:
+        array = list(array)
+
     return str(array).replace(" ", "").strip("[]")

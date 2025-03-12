@@ -2,6 +2,7 @@
 #include "strutil.h"
 #include "abdrive360.h"
 #include "prottrans.h"
+#include "protcom.h"
 
 
 // search and execute
@@ -15,11 +16,12 @@ void execute(char* designation)
         if (strcmp(mapping[i].designation, designation))
         {
             mapping[i].function();
-
+            sendack(designation);
             return;
         }
     }
 
+    sendack(designation);
     senderror(14);
 }
 
@@ -27,12 +29,12 @@ void execute(char* designation)
 
 
 // joysticks
-void joystick_left()
+void joystick_left(char* coords)
 {
 
 }
 
-void joystick_right()
+void joystick_right(char* coords)
 {
 
 

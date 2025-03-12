@@ -44,6 +44,8 @@ int strtokm(char* string, char delim, char** dest)
       dest[splits][sec] = string[i];
       sec++;
     } else {
+      // add in \r at the end before moving
+      dest[splits][sec] = '\r';
       splits++;
       sec = 0; 
     }

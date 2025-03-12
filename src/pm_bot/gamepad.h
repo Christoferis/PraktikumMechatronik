@@ -7,6 +7,9 @@
 // maximum amount of buttons that can be pressed at once
 #define BUTTONS_PRESSED 13
 
+// Amount of joysticks the controller has
+#define JOYSTICKS 2
+
 // TODO: make struct array with extra space instead
 typedef struct _buttonfunc
 {

@@ -1,9 +1,9 @@
 #include "prottrans.h"
 #include "fdserial.h"
 #include "protcom.h"
-#include "constants.h"
 #include "strutil.h"
 #include "propeller.h"
+#include "abdrive360.h"
 
 // defines
 #define lenmsg 128
@@ -44,6 +44,9 @@ void sink()
         send('m', "\r");
         newping = 0;
       }
+
+      //reset servos if no message (joysticks should always be sent)
+      drive_speed(0, 0);
 
       pause(10);
       continue;
