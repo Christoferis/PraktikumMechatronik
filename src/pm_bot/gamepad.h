@@ -27,13 +27,17 @@ void execute(char* designation);
 
 //amount of buttons mapped (len of mapping)
 #define len_mapping 1
-const buttonfunction mapping[] = {{.designation = "00", .function = 0}}; 
+const buttonfunction mapping[] = {{.designation = "09", .function = &testfunction}}; 
 
 
 // joystick functions
 void joystick_right(char* string);
 
 void joystick_left(char* string);
+
+// test functions
+// mapped to start (09)
+void testfunction();
 
 
 #endif
