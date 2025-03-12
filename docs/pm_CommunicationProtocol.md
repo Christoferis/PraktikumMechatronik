@@ -51,10 +51,10 @@ Designation as defined in mapping.py
 | d7          | Up + Left            |
 | 14          | None                 |
 ##### Joystick
-|Designation|Description|Data|
-|-|-|-|
-|r|Right Joystick|Tuple(x, y) in Range (0, 1000), Midpoint 500|
-|l|Left Joystick|Tuple(x, y) in Range (0,1000), Midpoint 500|
+| Designation | Description    | Data                                         |
+| ----------- | -------------- | -------------------------------------------- |
+| r           | Right Joystick | Tuple(x, y) in Range (0, 1000), Midpoint 500 |
+| l           | Left Joystick  | Tuple(x, y) in Range (0,1000), Midpoint 500  |
 
 #### Bot -> Host
 |Designation|Bedeutung|

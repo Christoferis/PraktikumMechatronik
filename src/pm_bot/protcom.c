@@ -2,7 +2,7 @@
 #include "prottrans.h"
 #include "simpletools.h"
 #include "protutil.h"
-#include "buttons.h"
+#include "gamepad.h"
 
 void receive(char msg[])
 {
@@ -18,6 +18,11 @@ void receive(char msg[])
     }
 
     //joystick part
+    // 0: x, 1: y
+    int right[2];
+    int left[2];
+
+    
 
 }
 
@@ -25,11 +30,14 @@ void receive(char msg[])
 void processbuttons(char buttons[])
 {
     // max possible pressed buttons at one time: 13; 3 for designation
-    char pressed[13][3];
+    char pressed[BUTTONS_PRESSED][3];
     int splits = strtokm(buttons, ';', pressed);
 
-    
-
+    int i;
+    for (i = 0; i < splits; i++)
+    {
+        execute(*(pressed[i]) + 1);
+    }
 }
 
 
