@@ -9,6 +9,7 @@
 
 // Amount of joysticks the controller has
 #define JOYSTICKS 2
+#define len_mapping 1
 
 // TODO: make struct array with extra space instead
 typedef struct _buttonfunc
@@ -17,18 +18,12 @@ typedef struct _buttonfunc
     void (*function)();
 } buttonfunction;
 
+
+extern const char* buttons[];
+extern const buttonfunction mapping[];
+
 //button
-const char* buttons[] = {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "14"};
-
 void execute(char* designation);
-
-// declare functions using *designated initializer*: {.designation = "00", .function = &button00}
-// insert before 0 
-
-//amount of buttons mapped (len of mapping)
-#define len_mapping 1
-const buttonfunction mapping[] = {{.designation = "09", .function = &testfunction}}; 
-
 
 // joystick functions
 void joystick_right(char* string);
@@ -38,6 +33,12 @@ void joystick_left(char* string);
 // test functions
 // mapped to start (09)
 void testfunction();
+
+
+// declare functions using *designated initializer*: {.designation = "00", .function = &button00}
+// insert before 0 
+
+//amount of buttons mapped (len of mapping)
 
 
 #endif

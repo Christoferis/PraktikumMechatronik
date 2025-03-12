@@ -3,3 +3,5 @@ __pycache__
 .vscode
 todo.md
 .obsidian
+*.o
+*.elf

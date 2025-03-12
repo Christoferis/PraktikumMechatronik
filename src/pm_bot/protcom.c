@@ -10,10 +10,10 @@ void receive(char msg[])
     char* joy = strchrm(msg, 'j');
 
     // button part (pointer diff if button part present)
-    if (joyl != msg)
+    if (joy != msg)
     {
         //obal"  all writes btw are on "glmsg array
-        *(joyl - 1) = '\r';
+        *(joy - 1) = '\r';
         processbuttons(msg);
     }
 

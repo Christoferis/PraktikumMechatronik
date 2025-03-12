@@ -86,7 +86,7 @@ char *strchrm(char *string, char c)
 //TODO: match stringarray method
 
 // compares two strings
-int strcmp(char *str1, char *str2)
+int strcmpmm(char *str1, char *str2)
 {
   int i = 0;
 

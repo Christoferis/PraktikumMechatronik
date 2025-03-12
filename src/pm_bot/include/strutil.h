@@ -7,13 +7,13 @@
 int strntok (char* string, char delimiter);
 
 // splits a string into substrings by delimiter
-int strtokm(char* string, char delimiter, char **destination)
+int strtokm(char* string, char delimiter, char **destination);
 
 // finds first occurence of a char in a string
 char* strchrm(char* string, char c);
 
 // compares two strings
-int strcmp(char* str1, char* str2);
+int strcmpm(char* str1, char* str2);
 
 // converts a string into an integer (negative support), output is found number
 int strtoint(char* string);

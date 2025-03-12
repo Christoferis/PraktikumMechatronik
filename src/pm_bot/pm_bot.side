@@ -1,5 +1,7 @@
 pm_bot.c
 -I ./include
+gamepad.c
+protcom.c
 >compiler=C
 >memtype=cmm main ram compact
 >optimize=-Os
