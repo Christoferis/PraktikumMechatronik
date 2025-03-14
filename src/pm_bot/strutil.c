@@ -1,9 +1,8 @@
 #include "strutil.h"
-#include "constants.h"
 #include "math.h"
 
 // own string library to cut down in memory usage (string.h bad)
-
+#define MAX_LOOPS 256
 
 // amount of tokens a string can be split into
 int strntok (char* string, char delimiter)
@@ -54,8 +53,6 @@ int strtokm(char* string, char delim, char** dest)
   return splits + 1;
 }
 
-
-
 // finds a certain character in a string and returns a pointer to that spot
 char *strchrm(char *string, char c)
 {
@@ -79,14 +76,14 @@ char *strchrm(char *string, char c)
   }
   else
   {
-    return NULL;
+    return 0;
   }
 }
 
 //TODO: match stringarray method
 
 // compares two strings
-int strcmpmm(char *str1, char *str2)
+int strcmpm(char *str1, char *str2)
 {
   int i = 0;
 
@@ -115,7 +112,7 @@ int strtoint(char *string)
   if (current == '-')
   {
     current = string[1];
-    negative = TRUE;
+    negative = 1;
   }
 
   while (isnumeric(current) && i < MAX_LOOPS)

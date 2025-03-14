@@ -1,7 +1,14 @@
 pm_bot.c
--I ./include
 gamepad.c
 protcom.c
+protcom.h
+prottrans.c
+protutil.c
+strutil.c
+strutil.h
+prottrans.h
+gamepad.h
+protutil.h
 >compiler=C
 >memtype=cmm main ram compact
 >optimize=-Os
@@ -11,4 +18,5 @@ protcom.c
 >-Dprintf=__simple_printf
 >-enable_pruning
 >defs::-std=c99
+>-lm
 >BOARD::ACTIVITYBOARD
