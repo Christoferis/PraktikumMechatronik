@@ -101,7 +101,7 @@ class transport_protocol:
                 counter = time()
                 self.ping = 0
                 pingprogress = True
-                self.send("m\r", True)
+                self.send("m", True)
                 pass
             elif pingprogress:
                 self.ping = time() - counter
@@ -109,7 +109,7 @@ class transport_protocol:
 
     def send(self, msg: str, ping = False):
         with self.sema:
-            byte = ("r" + msg).encode()
+            byte = ("r" + msg + "\r").encode()
             sent = 0
 
             while sent < len(byte):
@@ -199,7 +199,7 @@ class pm_CommunicationProtocol(communication_protocol):
         msg += "jl" + convert_to(joystick[0]) + ";"
         msg += "jr" + convert_to(joystick[1])
 
-        self.tp.send(msg + "\r")
+        self.tp.send(msg)
         pass
 
     def close(self):

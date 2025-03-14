@@ -3,11 +3,16 @@
  */
 
 #include "simpletools.h"
-#include "protcom.h"
+#include "prottrans.h"
 #include "servo360.h"
 #include "gamepad.h"
 
 int main(void)
 {
+  while (1)
+   {
+     sink();
+   }
+  
   return 0;
 }

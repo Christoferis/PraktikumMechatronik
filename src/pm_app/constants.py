@@ -22,3 +22,7 @@ MIN_LOG_LVL = DEBUG
 
 # Bytes
 MAX_MSG_LEN = 64
+
+# Gamepad
+MAX_AXIS = 32767
+AXIS_RANGE = 500

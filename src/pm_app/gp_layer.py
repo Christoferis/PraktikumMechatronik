@@ -13,9 +13,10 @@ from analog.mapping import GenericPS1ButtonMap as button_map
 from analog.mapping import GenericPS1DpadMap as dpad_map
 from analog.mapping import AxisMax
 from ui import update_left, update_right, update_dpad, update_buttons
+from constants import MAX_AXIS, AXIS_RANGE
 
-# list(r, l), with l, r: tuple(x,y)
-joystick = [(0, 0), (0, 0)]
+# list(l, r), with l, r: tuple(x,y)
+joystick = [(500, 500), (500, 500)]
 
 # booleans corresponding to index
 buttons = list()
@@ -28,12 +29,12 @@ com_INSTANCE = None
 # input is tuple
 def cb_left(xy: tuple[int, int]):
     global joystick
-    joystick[1] = xy
+    joystick[0] = (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE))
     update_left(xy)
 
 def cb_right(xy: tuple[int, int]):
     global joystick
-    joystick[0] = xy
+    joystick[1] = (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE))
 
     update_right(xy)
 
