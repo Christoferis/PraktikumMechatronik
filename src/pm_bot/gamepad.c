@@ -32,7 +32,8 @@ void execute (char* designation)
 
 
 // joysticks
-void joystick_left (char* coords) {
+void joystick_left (char* coords)
+{
 
 }
 
@@ -41,7 +42,6 @@ void joystick_right (char* coords)
 
 
 }
-
 
 // testfunction
 void testfunction ()

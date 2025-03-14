@@ -15,7 +15,7 @@ from analog.mapping import AxisMax
 from ui import update_left, update_right, update_dpad, update_buttons
 
 # list(r, l), with l, r: tuple(x,y)
-joystick = list()
+joystick = [(0, 0), (0, 0)]
 
 # booleans corresponding to index
 buttons = list()
@@ -46,14 +46,13 @@ def cb_dpad(dpad_state: int):
 
 # input is list
 def cb_buttons(states: list[bool]):
-
-    global buttons, joystick, dpad
+    global buttons
     buttons = states
     update_buttons(states)
 
     # run here to save one thread: CB_ALWAYS will always run this function callback
     # change if sending takes to long
-    INSTANCE.msg_bundle(joystick, dpad, buttons)
+    com_INSTANCE.msg_bundle(joystick, dpad, buttons)
 
 
 def instance(com):

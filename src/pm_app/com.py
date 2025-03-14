@@ -14,6 +14,8 @@ from constants import MAX_MSG_LEN, PINGINTERVAL, CON_RETRY
 from logging import warning, info, debug, critical, basicConfig, DEBUG
 from time import time, sleep
 from tkinter import IntVar
+from analog.mapping import GenericPS1DpadMap as dpad_map, GenericPS1ButtonMap as button_map
+from util.csv_typed import convert_to
 
 class transport_protocol:
 
@@ -22,9 +24,10 @@ class transport_protocol:
         self.sema = Semaphore()
         self.sink = Thread(None, self._background, "Sink")
         self.ip = ip
+        self.socket = None
 
         # ui bridging -> use IntVar object for everything instead of ping and seperate intvar object 
-        self.ping = IntVar()
+        self.ping = 0
         
         #open socket
         self.reconnect(ip)
@@ -96,17 +99,17 @@ class transport_protocol:
             #ping section
             if (time() - counter >= PINGINTERVAL and not pingprogress):
                 counter = time()
-                self.ping.set(0)
+                self.ping = 0
                 pingprogress = True
                 self.send("m\r", True)
                 pass
             elif pingprogress:
-                self.ping.set(time() - counter)
+                self.ping = time() - counter
         pass
 
-    def send(self, msg, ping = False):
+    def send(self, msg: str, ping = False):
         with self.sema:
-            byte = msg.encode()
+            byte = ("r" + msg).encode()
             sent = 0
 
             while sent < len(byte):
@@ -127,7 +130,10 @@ class transport_protocol:
         warning("Reconnecting to " + ip[0] + ":" + str(ip[1]))
 
         try:
-            self.socket.close()
+
+            if self.socket != None:
+                self.socket.close()
+
             self.socket = create_connection(ip, 0.1)
 
         except Exception as e:
@@ -175,21 +181,25 @@ class pm_CommunicationProtocol(communication_protocol):
         msg = ""
         # bundles all information about the controller and sends it to the bot
         # buttons
+
         for d in enumerate(buttons):
-            if d[1] and com_buttons[d[0]] not in self.waiting:
-                msg += "b" + com_buttons[d[0]] + ";"
-                self.waiting.append(com_buttons[d[0]])
+            button = f"{d[0]:02}"
+
+            if d[1] and button not in self.waiting:
+                msg += "b" + button + ";"
+                self.waiting.append(button)
 
         # dpad (just a single value)
-        if dpad_state != dpad_map.NONE and com_dpad[dpad_state] not in self.waiting:
-            msg +=  "b" + dpad_map(dpad_state) + ";"
-            self.waiting.append(com_dpad[dpad_state])
+        d = dpad_map(dpad_state) 
+        if d != dpad_map.NONE and d.name not in self.waiting:
+            msg +=  "b" + d.name + ";"
+            self.waiting.append(d.name)
         
         # joystick
         msg += "jl" + convert_to(joystick[0]) + ";"
         msg += "jr" + convert_to(joystick[1])
 
-        self.tp.send(msg)
+        self.tp.send(msg + "\r")
         pass
 
     def close(self):

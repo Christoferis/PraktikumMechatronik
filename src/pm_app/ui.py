@@ -125,15 +125,6 @@ def instance(com, root):
     protocol = tk.LabelFrame(root, text="Protocol")
     protocol.pack(side=tk.BOTTOM)
 
-    connect = tk.Frame(protocol)
-    connect.pack(side=tk.RIGHT)
-
-    # conncectivity part
-    pingText = tk.Label(connect, text="Current Ping: ")
-    pingText.pack(side=tk.TOP)
-    ping = tk.Label(connect, textvariable=com.get_ping())
-    ping.pack(side=tk.BOTTOM)
-
     # logging part
     log = tk.Frame(protocol)
     log.pack(side=tk.LEFT)
@@ -154,9 +145,6 @@ def instance(com, root):
 
     # add to rootlogger
     logger.addHandler(whandler)
-
-    root.mainloop()
-
 
 # test
 if __name__ == "__main__":

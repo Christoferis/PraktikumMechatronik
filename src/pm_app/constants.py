@@ -2,6 +2,7 @@
 
 from platform import system
 from logging import DEBUG, WARNING, INFO, CRITICAL
+from analog.mapping import GenericPS1DpadMap as dpad
 
 # Generic Data
 PLATFORM = system()
@@ -21,7 +22,3 @@ MIN_LOG_LVL = DEBUG
 
 # Bytes
 MAX_MSG_LEN = 64
-
-# mapping
-com_buttons = ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11")
-com_dpad = ("d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7")
