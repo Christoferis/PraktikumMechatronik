@@ -52,6 +52,8 @@ void sink()
 
       pause(10);
       continue;
+    } else { //bot should only ping when timeouting
+      newping = 0;
     }
 
     readString(msg);
@@ -93,14 +95,15 @@ void sink()
 void send(char header, char st[])
 {
   int lockid = locknew();
+  int i;
+  char c = 0;
 
   while (!lockset(lockid));
 
-  char c = 0;
 
   fdserial_txChar(con, header);
 
-  for (int i = 0; i < lenmsg && c != '\r'; i++)
+  for (i = 0; i < lenmsg && c != '\r'; i++)
   {
     c = st[i];
     fdserial_txChar(con, c);
@@ -141,6 +144,14 @@ void readString(char st[])
   for (i = 0; i < lenmsg && (c != '\r' && c != '\n'); i++)
   {
     c = fdserial_rxChar(con);
+    
+    // broken pipe if empty bit:
+    if (c == 0) 
+    {
+      i--;
+      continue;
+    }
+
     st[i] = c;
   }
 
