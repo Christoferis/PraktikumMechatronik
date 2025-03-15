@@ -197,8 +197,7 @@ class pm_CommunicationProtocol(communication_protocol):
         pass
 
     def senddpad(self, dpad):
-        self.tp.sendrequest("b" + dpad)
-
+        self.tp.sendrequest("b" + str(dpad + 12))
         pass
 
     def close(self):
@@ -206,10 +205,6 @@ class pm_CommunicationProtocol(communication_protocol):
     
     def get_ping(self):
         return self.tp.get_ping()
-
-    # TODO: Reconnect
-    def reconnect(self):
-        pass
 
     pass
 

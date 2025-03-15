@@ -6,68 +6,59 @@
 
 void receive(char msg[])
 {
-    // check for parts: b is not always present but j is.
-    char* joy = strchrm(msg, 'j');
-
-    // button part (pointer diff if button part present)
-    if (joy != 0 && joy != msg)
+    switch (msg[0])
     {
-        // all writes btw are on "global" msg array
-        *(joy - 1) = '\r';
-        processbuttons(msg);
+    case 'b':
+        processbuttons(msg + 1);
+        break;
+    
+    case 'j':
+        processjoystick(msg + 1);
+    default:
+        senderror(4);
+        break;
     }
-
-    //processjoystick(joy);
 }
 
-// split and sort
+// only one joystick at a time
+// receives r1000,1000\r here
+// error 524 for unknown joystick
 void processjoystick(char* joystick)
-{
-    printf("joystick\r");
-  
-    // maximum chars: jr1000,1000\r
-    char joysticks[JOYSTICKS][12];
-    strtokm(joystick, ';', joysticks);
+{  
+    int xy[2];
+    decodeintarray(joystick + 1, xy , 2);
     
-    int i;
-    for (i = 0; i < JOYSTICKS; i++)
+    switch (joystick[0])
     {
-        switch (joysticks[i][1])
-        {
-            case 'r':
-                joystick_right(joysticks[i] + 2);
-                break;
+        case 'r':
+            joystick_right(xy);
+            break;
 
-            case 'l':
-                joystick_left(joysticks[i] + 2);
-                break;
+        case 'l':
+            joystick_left(xy);
+            break;
 
-            default:
-                senderror(4);
-                break;
-        }
+        default:
+            senderror(24);
+            break;
     }
-    
 }
-
 
 void processbuttons(char buttons[])
 {
-    printf("buttons\r");
-  
-    // max possible pressed buttons at one time: 13; 3 for designation
-    char pressed[BUTTONS_PRESSED][4];
-    int splits = strtokm(buttons, ';', pressed);
+    int maximalbuttons[11];
+    int pressed = decodeintarray(buttons, maximalbuttons, 11);
 
     int i;
-    for (i = 0; i < splits; i++)
+    for (i = 0; i < pressed; ++i)
     {
-        execute(pressed[i] + 1);
+        execute(maximalbuttons[i]);
     }
+
 }
 
 // sends button acknowledge
-void sendack(char* button)
+void sendack(int button)
 {
     char msg[5];
     msg[0] = 'a';

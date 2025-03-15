@@ -14,31 +14,31 @@
 // TODO: make struct array with extra space instead
 typedef struct _buttonfunc
 {
-    char* designation;
+    int designation;
     void (*function)();
 } buttonfunction;
 
 
-extern const char* buttons[];
+// declare functions using *designated initializer*: {.designation = "00", .function = &button00}
+// insert before 0 
+//amount of buttons mapped (len of mapping)
 extern const buttonfunction mapping[];
 
+
 //button
-void execute(char* designation);
+void execute(int designation);
 
 // joystick functions
-void joystick_right(char* string);
+void joystick_right(int xy[]);
 
-void joystick_left(char* string);
+void joystick_left(int xy[]);
 
 // test functions
 // mapped to start (09)
 void testfunction();
 
 
-// declare functions using *designated initializer*: {.designation = "00", .function = &button00}
-// insert before 0 
 
-//amount of buttons mapped (len of mapping)
 
 
 #endif
