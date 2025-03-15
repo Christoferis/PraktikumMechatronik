@@ -56,7 +56,6 @@ int strtokm(char* string, char delim, char** dest)
 // finds a certain character in a string and returns a pointer to that spot
 char *strchrm(char *string, char c)
 {
-  char temp = string[0];
   int i = 0;
   int found = 0;
   while (string[i] && string[i] != '\r' && i < MAX_LOOPS)

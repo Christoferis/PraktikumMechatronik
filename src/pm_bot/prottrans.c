@@ -39,8 +39,6 @@ void sink()
     {
       newping++;
       
-      toggle(26); 
-
       if (newping == pingtime)
       {
         send('m', "\r");
@@ -55,7 +53,7 @@ void sink()
     } else { //bot should only ping when timeouting
       newping = 0;
     }
-
+    
     readString(msg);
 
     switch (msg[0])
@@ -81,10 +79,8 @@ void sink()
     case 'e':
       break;
 
-    case 'l':
-      break;
-
     default:
+      toggle(26);
       send('e', "404\r");
       break;
     }
@@ -149,6 +145,7 @@ void readString(char st[])
     if (c == 0) 
     {
       i--;
+      toggle(26);
       continue;
     }
 
@@ -162,4 +159,6 @@ void readString(char st[])
   {
     st[i] = 0;
   }
+  
+  fdserial_rxFlush(con);
 }

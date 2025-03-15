@@ -153,7 +153,6 @@ class transport_protocol:
 class communication_protocol:
 
     def _accept(self, command):
-        raise NotImplementedError
         pass
     pass
 
@@ -163,6 +162,7 @@ class pm_CommunicationProtocol(communication_protocol):
     # blocking by writing a value under the right key (boolean?)
 
     def __init__(self, ip):
+        super().__init__()
         self.waiting = list()
         self.tp = None
 

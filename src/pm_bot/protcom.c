@@ -17,12 +17,14 @@ void receive(char msg[])
         processbuttons(msg);
     }
 
-    processjoystick(joy);
+    //processjoystick(joy);
 }
 
 // split and sort
 void processjoystick(char* joystick)
 {
+    printf("joystick\r");
+  
     // maximum chars: jr1000,1000\r
     char joysticks[JOYSTICKS][12];
     strtokm(joystick, ';', joysticks);
@@ -51,6 +53,8 @@ void processjoystick(char* joystick)
 
 void processbuttons(char buttons[])
 {
+    printf("buttons\r");
+  
     // max possible pressed buttons at one time: 13; 3 for designation
     char pressed[BUTTONS_PRESSED][4];
     int splits = strtokm(buttons, ';', pressed);

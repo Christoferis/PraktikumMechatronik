@@ -9,6 +9,8 @@
 
 int main(void)
 {
+  pause(100);
+  
   while (1)
    {
      sink();
