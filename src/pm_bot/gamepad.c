@@ -47,5 +47,5 @@ void joystick_right (char* coords)
 void testfunction ()
 {
     //turns light 28 on or off
-    toggle(28);
+    toggle(27);
 }

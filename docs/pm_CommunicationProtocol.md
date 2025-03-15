@@ -41,14 +41,14 @@ Designation as defined in mapping.py
 | 09          | start                |
 | 10          | PS L3                |
 | 11          | PS R3                |
-| N           | PS D-Pad Up          |
-| NE          | Up + Right           |
-| E           | PS D-Pad Right       |
-| SE          | Down + Right         |
-| S           | PS D-Pad Down        |
-| SW          | Down + Left          |
-| W           | PS D-Pad Left        |
-| NW          | Up + Left            |
+| d0          | PS D-Pad Up (N)      |
+| d1          | Up + Right (NE)      |
+| d2          | PS D-Pad Right (E)   |
+| d3          | Down + Right (SE)    |
+| d4          | PS D-Pad Down (S)    |
+| d5          | Down + Left (SW)     |
+| d6          | PS D-Pad Left (W)    |
+| d7          | Up + Left (NW)       |
 | 14          | None                 |
 ##### Joystick
 | Designation | Description    | Data                                         |

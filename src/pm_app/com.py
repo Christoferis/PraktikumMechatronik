@@ -86,7 +86,7 @@ class transport_protocol:
 
                 elif msg.startswith("m"):
                     debug("i: " + msg)
-                    self.send("p\r")
+                    self._send("p")
 
                 elif msg.startswith("p"):
                     debug("i: " + msg)
@@ -101,15 +101,15 @@ class transport_protocol:
                 counter = time()
                 self.ping = 0
                 pingprogress = True
-                self.send("m", True)
+                self._send("m")
                 pass
             elif pingprogress:
                 self.ping = time() - counter
         pass
 
-    def send(self, msg: str, ping = False):
+    def _send(self, msg: str):
         with self.sema:
-            byte = ("r" + msg + "\r").encode()
+            byte = (msg + "\r").encode()
             sent = 0
 
             while sent < len(byte):
@@ -117,10 +117,13 @@ class transport_protocol:
                 pass
         pass
 
-        if not ping:
-            info("o: " + msg)
-        else:
+        if msg.startswith("m") or msg.startswith("p"):
             debug("o: " + msg)
+        else:
+            info("o: " + msg)
+
+    def sendrequest(self, msg: str):
+        _send("r" + msg)
 
     # returns intvar object
     def get_ping(self):
@@ -199,7 +202,7 @@ class pm_CommunicationProtocol(communication_protocol):
         msg += "jl" + convert_to(joystick[0]) + ";"
         msg += "jr" + convert_to(joystick[1])
 
-        self.tp.send(msg)
+        self.tp.sendrequest(msg)
         pass
 
     def close(self):

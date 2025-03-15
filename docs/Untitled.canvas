@@ -1,8 +1,9 @@
 {
 	"nodes":[
-		{"id":"c7bcd52296441f15","x":60,"y":-260,"width":250,"height":60,"type":"text","text":"com"},
-		{"id":"6ba436c80519bdba","x":-780,"y":-460,"width":280,"height":160,"type":"text","text":"gp_layer"},
-		{"id":"48ade055e1fd922e","x":-420,"y":100,"width":250,"height":60,"type":"text","text":"ui"}
+		{"id":"c7bcd52296441f15","type":"text","text":"com","x":60,"y":-260,"width":250,"height":60},
+		{"id":"6ba436c80519bdba","type":"text","text":"gp_layer","x":-780,"y":-460,"width":280,"height":160},
+		{"id":"48ade055e1fd922e","type":"text","text":"ui","x":-420,"y":100,"width":250,"height":60},
+		{"id":"69c54b8f6b113f8d","x":900,"y":-540,"width":250,"height":60,"type":"text","text":"Cog Usage"}
 	],
 	"edges":[
 		{"id":"df99885c35359ec9","fromNode":"6ba436c80519bdba","fromSide":"bottom","toNode":"48ade055e1fd922e","toSide":"left","label":"callback functions"},

@@ -38,6 +38,8 @@ void sink()
     if (fdserial_rxCount(con) < 1)
     {
       newping++;
+      
+      toggle(26); 
 
       if (newping == pingtime)
       {
@@ -45,8 +47,8 @@ void sink()
         newping = 0;
       }
 
-      //reset servos if no message (joysticks should always be sent)
-      drive_speed(0, 0);
+      //reset servos if no message (joysticks should always be sent): only if servos are there
+      //drive_speed(0, 0);
 
       pause(10);
       continue;
