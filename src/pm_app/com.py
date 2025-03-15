@@ -21,7 +21,7 @@ class transport_protocol:
 
     def __init__(self, ip, protocol):
         self.stop = False
-        self.sema = Semaphore()
+        self.sema = Semaphore(3)
         self.sink = Thread(None, self._background, "Sink")
         self.ip = ip
         self.socket = None
@@ -180,29 +180,25 @@ class pm_CommunicationProtocol(communication_protocol):
 
         pass
 
-    def msg_bundle(self, joystick, dpad_state, buttons):
-        msg = ""
-        # bundles all information about the controller and sends it to the bot
-        # buttons
+    def sendjoystick(self, side, xy):
+        self.tp.sendrequest("j" + side + convert_to(xy))
+        pass
 
-        for d in enumerate(buttons):
-            button = f"{d[0]:02}"
+    def sendbuttons(self, buttons):
+        pressed = list() 
 
-            if d[1] and button not in self.waiting:
-                msg += "b" + button + ";"
-                self.waiting.append(button)
+        for i in enumerate(buttons):
+            if i[1] and button_map(i[0]).value not in self.waiting:                
+                pressed.append(i[0])
+                pass
 
-        # dpad (just a single value)
-        d = dpad_map(dpad_state) 
-        if d != dpad_map.NONE and d.name not in self.waiting:
-            msg +=  "b" + d.name + ";"
-            self.waiting.append(d.name)
-        
-        # joystick
-        msg += "jl" + convert_to(joystick[0]) + ";"
-        msg += "jr" + convert_to(joystick[1])
+        if pressed:
+            self.tp.sendrequest("b" + convert_to(pressed))
+        pass
 
-        self.tp.sendrequest(msg)
+    def senddpad(self, dpad):
+        self.tp.sendrequest("b" + dpad)
+
         pass
 
     def close(self):

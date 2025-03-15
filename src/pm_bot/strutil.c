@@ -84,9 +84,9 @@ char *strchrm(char *string, char c)
 // compares two strings
 int strcmpm(char *str1, char *str2)
 {
-  int i = 0;
+  int i;
 
-  for (int i = 0; (i < MAX_LEN) && str1[i] == str2[i]; i++)
+  for (i = 0; (i < MAX_LEN) && str1[i] == str2[i]; i++)
   {
     if (str1[i] == '\r' || str1[i] == '\0')
     {

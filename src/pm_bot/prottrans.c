@@ -23,8 +23,9 @@ void send(char header, char st[]);
 // this function will be run in a cog
 void sink()
 {
+  int happened = -1;
+  
   char msg[lenmsg];
-  int msgPointer = 0;
 
   if (con == 0)
   {
@@ -55,7 +56,7 @@ void sink()
     }
     
     readString(msg);
-
+    
     switch (msg[0])
     {
     case 'm':
@@ -80,10 +81,9 @@ void sink()
       break;
 
     default:
-      toggle(26);
       send('e', "404\r");
       break;
-    }
+    }    
   }
 }
 
@@ -137,28 +137,17 @@ void readString(char st[])
   char c = 0;
   int i = 0;
 
-  for (i = 0; i < lenmsg && (c != '\r' && c != '\n'); i++)
+  for (i = 0; i < lenmsg && (c != '\r' && c != '\n'); ++i)
   {
-    c = fdserial_rxChar(con);
-    
-    // broken pipe if empty bit:
-    if (c == 0) 
-    {
-      i--;
-      toggle(26);
-      continue;
-    }
-
+    c = fdserial_rxChar(con);    
     st[i] = c;
   }
 
-  i++;
+  ++i;
 
   // fill the rest with zeroes to reset array
   for (; i < lenmsg; i++)
   {
     st[i] = 0;
   }
-  
-  fdserial_rxFlush(con);
 }

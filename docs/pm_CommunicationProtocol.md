@@ -9,7 +9,7 @@ Messages der Kategorie Joystick erwarten keine Antwort.
 
 Solange ein gedrückter Button keine Antwort erhalten hat, soll dieser Button von weiterem betätigen geblockt werden.
 
-Messages von Host an den Bot können gebündelt werden (N-Key Rollover für Controller). Sie werden mit einem Semikolon geteilt und somit gebündelt. Das Bündel sollte klar zwischen Buttons und Joysticks geteilt werden, i. a. w. es sollte nicht gemischt werden.
+Button messages von Host an den Bot können gebündelt werden (N-Key Rollover für Controller). Sie werden mit einem Semikolon geteilt und somit gebündelt.
 
 ### Definition
 
@@ -25,31 +25,32 @@ Messages des CP bestehen aus:
 | b           | button    |
 
 ##### Button
-Designation as defined in mapping.py
+Designation based on mapping found in mapping.py
+Dpad messages need to be offset by 12 to fit the here proposed scheme
 
-| Designation | Bedeutung            |
-| ----------- | -------------------- |
-| 00          | Playstation X Button |
-| 01          | PS Triangle Button   |
-| 02          | PS O Button          |
-| 03          | PS Square Button     |
-| 04          | shoulder left        |
-| 05          | shoulder right       |
-| 06          | trigger left         |
-| 07          | trigger right        |
-| 08          | select               |
-| 09          | start                |
-| 10          | PS L3                |
-| 11          | PS R3                |
-| d0          | PS D-Pad Up (N)      |
-| d1          | Up + Right (NE)      |
-| d2          | PS D-Pad Right (E)   |
-| d3          | Down + Right (SE)    |
-| d4          | PS D-Pad Down (S)    |
-| d5          | Down + Left (SW)     |
-| d6          | PS D-Pad Left (W)    |
-| d7          | Up + Left (NW)       |
-| 14          | None                 |
+| Designation | Bedeutung                           |
+| ----------- | ----------------------------------- |
+| 00          | Playstation X Button                |
+| 01          | PS Triangle Button                  |
+| 02          | PS O Button                         |
+| 03          | PS Square Button                    |
+| 04          | shoulder left                       |
+| 05          | shoulder right                      |
+| 06          | trigger left                        |
+| 07          | trigger right                       |
+| 08          | select                              |
+| 09          | start                               |
+| 10          | PS L3                               |
+| 11          | PS R3                               |
+| 12          | PS D-Pad Up (N) (mapping offset 12) |
+| 13          | Up + Right (NE)                     |
+| 14          | PS D-Pad Right (E)                  |
+| 15          | Down + Right (SE)                   |
+| 16          | PS D-Pad Down (S)                   |
+| 17          | Down + Left (SW)                    |
+| 18          | PS D-Pad Left (W)                   |
+| 19          | Up + Left (NW)                      |
+| 14          | None (would never be sent)          |
 ##### Joystick
 | Designation | Description    | Data                                         |
 | ----------- | -------------- | -------------------------------------------- |
