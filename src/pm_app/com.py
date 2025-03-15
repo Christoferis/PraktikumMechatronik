@@ -123,7 +123,7 @@ class transport_protocol:
             info("o: " + msg)
 
     def sendrequest(self, msg: str):
-        _send("r" + msg)
+        self._send("r" + msg)
 
     # returns intvar object
     def get_ping(self):

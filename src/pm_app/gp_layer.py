@@ -53,7 +53,7 @@ def cb_buttons(states: list[bool]):
 
     # run here to save one thread: CB_ALWAYS will always run this function callback
     # change if sending takes to long
-    # com_INSTANCE.msg_bundle(joystick, dpad, buttons)
+    com_INSTANCE.msg_bundle(joystick, dpad, buttons)
 
 
 def instance(com):
