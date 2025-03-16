@@ -26,11 +26,11 @@ void execute(int designation)
 }
 
 // joysticks
-void joystick_left (char* coords)
+void joystick_left (int coords[])
 {
 }
 
-void joystick_right (char* coords)
+void joystick_right (int coords[])
 {
 }
 
@@ -40,4 +40,6 @@ void testfunction ()
 {
     //turns light 28 on or off
     toggle(27);
+
+    sendack(9);
 }

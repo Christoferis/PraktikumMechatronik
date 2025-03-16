@@ -30,6 +30,7 @@ int strntok (char* string, char delimiter)
   return count;
 }
 
+// TODO if needed: investigate warning of simpleide
 int strtokm(char* string, char delim, char** dest)
 {
   int i = 0;
@@ -79,8 +80,7 @@ char *strchrm(char *string, char c)
   }
 }
 
-//TODO: match stringarray method
-
+// TODO if needed: something might be wrong but I'm not gonna bother fixing it since it is not used now anyway
 // compares two strings
 int strcmpm(char *str1, char *str2)
 {
@@ -92,10 +92,9 @@ int strcmpm(char *str1, char *str2)
     {
       return 1;
     }
-
-    return 0;
   }
-
+  
+  return 0;
 }
 
 // converts a string into a integer

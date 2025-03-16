@@ -2,7 +2,11 @@
 #include "prottrans.h"
 #include "simpletools.h"
 #include "protutil.h"
+#include "strutil.h"
 #include "gamepad.h"
+
+void processjoystick(char[]);
+void processbuttons(char[]);
 
 void receive(char msg[])
 {
@@ -23,7 +27,7 @@ void receive(char msg[])
 // only one joystick at a time
 // receives r1000,1000\r here
 // error 524 for unknown joystick
-void processjoystick(char* joystick)
+void processjoystick(char joystick[])
 {  
     int xy[2];
     decodeintarray(joystick + 1, xy , 2);
@@ -62,11 +66,9 @@ void sendack(int button)
 {
     char msg[5];
     msg[0] = 'a';
-    msg[4] = '\r';
-
     msg[1] = 'b';
-    msg[2] = button[0];
-    msg[3] = button[1];
+
+    msg[inttostr(button, msg + 2) + 2] = '\r';
 
     sendrequest(msg);
 }

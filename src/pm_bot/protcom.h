@@ -14,7 +14,7 @@ void receive(char st[]);
 
 
 // send functions
-void sendack(char* button);
+void sendack(int button);
 
 
 #endif

@@ -22,9 +22,7 @@ void send(char header, char st[]);
 
 // this function will be run in a cog
 void sink()
-{
-  int happened = -1;
-  
+{  
   char msg[lenmsg];
 
   if (con == 0)

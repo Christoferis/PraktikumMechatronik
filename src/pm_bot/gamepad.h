@@ -29,9 +29,9 @@ extern const buttonfunction mapping[];
 void execute(int designation);
 
 // joystick functions
-void joystick_right(int xy[]);
+void joystick_right(int coords[]);
 
-void joystick_left(int xy[]);
+void joystick_left(int coords[]);
 
 // test functions
 // mapped to start (09)
