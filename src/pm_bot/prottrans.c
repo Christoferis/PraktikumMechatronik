@@ -79,6 +79,7 @@ void sink()
       break;
 
     default:
+      printf(msg);
       send('e', "404\r");
       break;
     }    

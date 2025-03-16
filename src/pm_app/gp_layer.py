@@ -14,16 +14,19 @@ from analog.mapping import GenericPS1DpadMap as dpad_map
 from analog.mapping import AxisMax
 from ui import update_left, update_right, update_dpad, update_buttons
 from constants import MAX_AXIS, AXIS_RANGE
+from logging import warning
 
 
 com_INSTANCE = None
 
 # input is tuple
 def cb_left(xy: tuple[int, int]):
+    warning("o: joystick l")
     com_INSTANCE.sendjoystick("l", (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE)))
     update_left(xy)
 
 def cb_right(xy: tuple[int, int]):
+    warning("o: joystick r")
     com_INSTANCE.sendjoystick("r", (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE)))
     update_right(xy)
 

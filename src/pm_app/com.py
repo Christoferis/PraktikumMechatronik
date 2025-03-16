@@ -137,7 +137,7 @@ class transport_protocol:
             if self.socket != None:
                 self.socket.close()
 
-            self.socket = create_connection(ip, 0.1)
+            self.socket = create_connection(ip, 1)
 
         except Exception as e:
             critical(e)
@@ -172,7 +172,7 @@ class pm_CommunicationProtocol(communication_protocol):
     def _acquire(self, command):
 
         if "ab" in command:
-            self.waiting.remove(command.removeprefix("ab"))
+            self.waiting.remove(int(command.removeprefix("ab")))
         elif "aj" in command:
             pass
         else:
@@ -190,6 +190,7 @@ class pm_CommunicationProtocol(communication_protocol):
         for i in enumerate(buttons):
             if i[1] and button_map(i[0]).value not in self.waiting:                
                 pressed.append(i[0])
+                self.waiting.append(i[0])
                 pass
 
         if pressed:
@@ -197,6 +198,9 @@ class pm_CommunicationProtocol(communication_protocol):
         pass
 
     def senddpad(self, dpad):
+        if dpad + 12 not in self.waiting:
+            self.waiting(dpad + 12)
+
         self.tp.sendrequest("b" + str(dpad + 12))
         pass
 

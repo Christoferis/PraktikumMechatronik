@@ -5,11 +5,8 @@
 #include "strutil.h"
 #include "gamepad.h"
 
-void processjoystick(char[]);
-void processbuttons(char[]);
-
 void receive(char msg[])
-{
+{  
     switch (msg[0])
     {
     case 'b':
@@ -18,6 +15,7 @@ void receive(char msg[])
     
     case 'j':
         processjoystick(msg + 1);
+        break;
     default:
         senderror(4);
         break;
@@ -27,7 +25,7 @@ void receive(char msg[])
 // only one joystick at a time
 // receives r1000,1000\r here
 // error 524 for unknown joystick
-void processjoystick(char joystick[])
+void processjoystick(char* joystick)
 {  
     int xy[2];
     decodeintarray(joystick + 1, xy , 2);
