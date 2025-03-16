@@ -21,19 +21,17 @@ com_INSTANCE = None
 
 # input is tuple
 def cb_left(xy: tuple[int, int]):
-    warning("o: joystick l")
     com_INSTANCE.sendjoystick("l", (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE)))
     update_left(xy)
 
 def cb_right(xy: tuple[int, int]):
-    warning("o: joystick r")
     com_INSTANCE.sendjoystick("r", (int((AXIS_RANGE / MAX_AXIS) * xy[0] + AXIS_RANGE), int((AXIS_RANGE / MAX_AXIS) * xy[1] + AXIS_RANGE)))
     update_right(xy)
 
 # input is single value
 def cb_dpad(dpad_state: int):
     com_INSTANCE.senddpad(dpad_state)
-    update_dpad(dpad)
+    update_dpad(dpad_state)
 
 # input is list
 def cb_buttons(states: list[bool]):

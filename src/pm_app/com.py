@@ -15,7 +15,7 @@ from logging import warning, info, debug, critical, basicConfig, DEBUG
 from time import time, sleep
 from tkinter import IntVar
 from analog.mapping import GenericPS1DpadMap as dpad_map, GenericPS1ButtonMap as button_map
-from util.csv_typed import convert_to
+from util import convert_to, msg_quantize
 
 class transport_protocol:
 
@@ -94,7 +94,7 @@ class transport_protocol:
                     counter = time()
                 
                 else:
-                    add_log("o: e404")
+                    warning("o: e404")
                 
             #ping section
             if (time() - counter >= PINGINTERVAL and not pingprogress):
@@ -108,8 +108,15 @@ class transport_protocol:
         pass
 
     def _send(self, msg: str):
+        # quantize to base of 2
+        msg_out = msg_quantize(msg)
+
+        if msg_out is None:
+            warning("Message " + msg + " too large")
+            return
+
         with self.sema:
-            byte = (msg + "\r").encode()
+            byte = (msg_out + "\n").encode()
             sent = 0
 
             while sent < len(byte):
@@ -152,6 +159,9 @@ class transport_protocol:
 
 class communication_protocol:
 
+    def __init__(self):
+        pass
+
     def _accept(self, command):
         pass
     pass
@@ -169,14 +179,14 @@ class pm_CommunicationProtocol(communication_protocol):
         # create a transport Protocol with given values
         self.tp = transport_protocol(ip, self)
 
-    def _acquire(self, command):
+    def _accept(self, command):
 
-        if "ab" in command:
-            self.waiting.remove(int(command.removeprefix("ab")))
-        elif "aj" in command:
-            pass
-        else:
-            warning("o: e504")
+        # if "ab" in command:
+        #     self.waiting.remove(int(command.removeprefix("ab")))
+        # elif "aj" in command:
+        #     pass
+        # else:
+        #     warning("o: e504")
 
         pass
 
@@ -190,7 +200,7 @@ class pm_CommunicationProtocol(communication_protocol):
         for i in enumerate(buttons):
             if i[1] and button_map(i[0]).value not in self.waiting:                
                 pressed.append(i[0])
-                self.waiting.append(i[0])
+                #self.waiting.append(i[0])
                 pass
 
         if pressed:
@@ -199,7 +209,8 @@ class pm_CommunicationProtocol(communication_protocol):
 
     def senddpad(self, dpad):
         if dpad + 12 not in self.waiting:
-            self.waiting(dpad + 12)
+            #self.waiting.append(dpad + 12)
+            pass
 
         self.tp.sendrequest("b" + str(dpad + 12))
         pass
