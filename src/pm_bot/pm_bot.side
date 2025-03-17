@@ -15,7 +15,6 @@ protutil.h
 >-m32bit-doubles
 >-Wall
 >-fno-exceptions
->-Dprintf=__simple_printf
 >-enable_pruning
 >defs::-std=c99
 >-lm

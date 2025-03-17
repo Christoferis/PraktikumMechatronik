@@ -1,6 +1,5 @@
 #include "gamepad.h"
 #include "strutil.h"
-#include "abdrive360.h"
 #include "prottrans.h"
 #include "protcom.h"
 
@@ -13,6 +12,8 @@ void execute(int designation)
 {
     int i = 0;
 
+    printf("trace3\n");
+
     for (i = 0; i < len_mapping; i++)
     { 
         if (mapping[i].designation == designation)
@@ -22,6 +23,7 @@ void execute(int designation)
         }
     }
 
+    sendack(designation);
     senderror(14);
 }
 
@@ -37,7 +39,7 @@ void joystick_right (int coords[])
 // define button functions, if any
 // testfunction
 void testfunction ()
-{
+{ 
     //turns light 28 on or off
     toggle(27);
     sendack(9);

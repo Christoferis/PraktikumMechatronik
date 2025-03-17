@@ -45,6 +45,6 @@ def instance(com):
     gph = gamepad.GamepadHandler(freq=100)
     gph.add_left_stick_callback(cb_left, gph.CB_ACTION)
     gph.add_right_stick_callback(cb_right, gph.CB_ACTION)
-    gph.add_dpad_callback(cb_dpad, gph.CB_CHANGED)
+    gph.add_dpad_callback(cb_dpad, gph.CB_ACTION)
     gph.add_all_buttons_callback(cb_buttons, gph.CB_CHANGED)
     gph.start()

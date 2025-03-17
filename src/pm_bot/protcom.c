@@ -17,6 +17,7 @@ void receive(char msg[])
         processjoystick(msg + 1);
         break;
     default:
+        toggle(26);
         senderror(4);
         break;
     }
@@ -50,7 +51,8 @@ void processbuttons(char buttons[])
 {
     int maximalbuttons[11];
     int pressed = decodeintarray(buttons, maximalbuttons, 11);
-
+    
+    printf("trace4\n");
     int i;
     for (i = 0; i < pressed; ++i)
     {

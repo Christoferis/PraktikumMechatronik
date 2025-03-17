@@ -1,0 +1,839 @@
+Archive member included because of file (symbol)
+
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o)
+                              cmm/strutil.o (_log10)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o)
+                              cmm/strutil.o (_pow)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_sqrtf.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o) (_sqrtf)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_floorf.o)
+                              cmm/strutil.o (_floor)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_scalbnf.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o) (_scalbnf)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_logf.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o) (_logf)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial_utils.o)
+                              cmm/prottrans.o (_fdserial_rxFlush)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o)
+                              cmm/prottrans.o (_fdserial_open)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(pst_firmware.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o) (_binary_pst_dat_start)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o) (_simpleterm_close)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_close.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o) (_serial_close)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_open.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o) (_serial_open)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_rxtx.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_open.o) (_serial_rxChar)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(echo.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o) (_terminal_checkEcho)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o) (_dport_ptr)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(pause.o)
+                              cmm/prottrans.o (_pause)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(pause.o) (_st_pauseTicks)
+/home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(toggle.o)
+                              cmm/gamepad.o (_toggle)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+                              cmm/strutil.o (___addsf3)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+                              cmm/strutil.o (___divsf3)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_logf.o) (___eqsf2)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o) (___gtsf2)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o) (___lesf2)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o) (___mulsf3)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+                              cmm/strutil.o (___subsf3)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+                              cmm/strutil.o (___fixsfsi)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+                              cmm/strutil.o (___floatsisf)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o)
+                              cmm/gamepad.o (_puts)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o) (___files)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(default_io.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o) (__driverlist)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(init_io.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o) (__InitIO)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(malloc.o)
+                              /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o) (_malloc)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(abort.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o) (_abort)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(sbrk.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(malloc.o) (__hubsbrk)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(thread.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o (__TLS)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(memset.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o (_memset)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(default_io.o) (__SimpleSerialDriver)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(serialparam.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o) (__baud)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(terminal.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o) (__term_write)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fflush.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o) (_fflush)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputs.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o) (___do_fputs)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(atoi.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o) (_atoi)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(ctype.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(atoi.o) (___ctype)
+/opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputc.o)
+                              /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputs.o) (_fputc)
+
+Allocating common symbols
+Common symbol       size              file
+
+_st_iodt            0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+_simpleterm_ecB     0x1               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+_simpleterm_ecsB    0x1               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+_us                 0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+___stdio_lock       0x4               /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+_st_usTicks         0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+_ms                 0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+_(float, int, long,...)(short)
+                    0x1a0             /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+_st_timeout         0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+_simpleterm_ecA     0x1               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+_simpleterm_ecsA    0x1               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+_simpleterm_echo    0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+_st_pauseTicks      0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+_st_msTicks         0x4               /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/spinboot.o
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/spinboot.o
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/spinboot.o
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+ .bss           0x0000000000000000        0x0 cmm/gamepad.o
+ .bss           0x0000000000000000        0x0 cmm/protcom.o
+ .data          0x0000000000000000        0x0 cmm/protutil.o
+ .bss           0x0000000000000000        0x0 cmm/protutil.o
+ .bss           0x0000000000000000        0x0 cmm/strutil.o
+ .text          0x0000000000000000        0x0 /tmp/ccRvIpQb.o
+ .data          0x0000000000000000        0x0 /tmp/ccRvIpQb.o
+ .bss           0x0000000000000000        0x0 /tmp/ccRvIpQb.o
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_sqrtf.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_sqrtf.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_floorf.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_floorf.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_scalbnf.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_logf.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial_utils.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial_utils.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_close.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_close.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_open.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_open.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_rxtx.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_rxtx.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(echo.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(echo.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(pause.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(pause.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+ .data          0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(toggle.o)
+ .bss           0x0000000000000000        0x0 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(toggle.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o)
+ .data          0x0000000000000000        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(default_io.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(default_io.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(abort.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(abort.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(sbrk.o)
+ .text          0x0000000000000000        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(thread.o)
+ .data          0x0000000000000000        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(thread.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(memset.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(memset.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o)
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(serialparam.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(serialparam.o)
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(terminal.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(terminal.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(terminal.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fflush.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fflush.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputs.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputs.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(atoi.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(atoi.o)
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(ctype.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(ctype.o)
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputc.o)
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+ .data          0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+ .bss           0x0000000000000000        0x0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+hub              0x0000000000000000 0x0000000000008000
+cog              0x0000000000000000 0x00000000000007c0
+coguser          0x0000000000000000 0x00000000000007c0
+ram              0x0000000020000000 0x0000000010000000
+rom              0x0000000030000000 0x0000000010000000
+drivers          0x00000000c0000000 0x0000000000100000
+dummy            0x00000000e0000000 0x0000000000100000
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/spinboot.o
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+LOAD cmm/gamepad.o
+LOAD cmm/protcom.o
+LOAD cmm/prottrans.o
+LOAD cmm/protutil.o
+LOAD cmm/strutil.o
+LOAD /tmp/ccRvIpQb.o
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Robotics/ActivityBot360/libabdrive360/cmm//libabdrive360.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Protocol/libsimplei2c/cmm//libsimplei2c.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Motor/libservo360/cmm//libservo360.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Robotics/ActivityBot360/libabdrive360/cmm//libabdrive360.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Protocol/libsimplei2c/cmm//libsimplei2c.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Robotics/ActivityBot360/libabdrive360/cmm//libabdrive360.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Robotics/ActivityBot360/libabdrive360/cmm//libabdrive360.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a
+START GROUP
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a
+END GROUP
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a
+LOAD /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+
+.boot           0x0000000000000000       0x20
+ *(.boot)
+ .boot          0x0000000000000000       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/spinboot.o
+                0x0000000000000000                __clkfreq
+                0x0000000000000004                __clkmode
+                0x0000000000000008                __sys_mbox
+
+.lmmkernel      0x0000000000000000      0x764 load address 0x0000000000000020
+ *(.lmmkernel)
+ .lmmkernel     0x0000000000000000      0x760 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crt0.o
+                0x0000000000000000                __LMM_entry
+                0x0000000000000000                r0
+                0x0000000000000004                r1
+                0x0000000000000008                r2
+                0x000000000000000c                r3
+                0x0000000000000010                r4
+                0x0000000000000014                r5
+                0x0000000000000018                r6
+                0x000000000000001c                r7
+                0x0000000000000020                r8
+                0x0000000000000024                r9
+                0x0000000000000028                r10
+                0x000000000000002c                r11
+                0x0000000000000030                r12
+                0x0000000000000034                r13
+                0x0000000000000038                r14
+                0x000000000000003c                lr
+                0x0000000000000040                sp
+                0x0000000000000044                pc
+                0x0000000000000048                __MASK_FFFFFFFF
+                0x000000000000004c                __TMP0
+                0x0000000000000440                __LMM_CALL
+                0x0000000000000448                __LMM_CALL_INDIRECT
+                0x0000000000000454                __LMM_JMP
+                0x0000000000000460                __LMM_PUSHM
+                0x0000000000000480                __LMM_PUSHM_ret
+                0x0000000000000488                __LMM_POPRET
+                0x0000000000000490                __LMM_POPRET_ret
+                0x0000000000000494                __LMM_POPM
+                0x00000000000004b4                __LMM_POPM_ret
+                0x00000000000004b8                __MASK_0000FFFF
+                0x00000000000004cc                __CLZSI
+                0x00000000000004d0                __CTZSI
+                0x0000000000000508                __CLZSI_ret
+                0x0000000000000514                __UDIVSI
+                0x0000000000000558                __UDIVSI_ret
+                0x0000000000000560                __DIVSI
+                0x0000000000000588                __DIVSI_ret
+                0x0000000000000598                __MULSI
+                0x00000000000005b8                __MULSI_ret
+                0x00000000000005bc                __C_LOCK_PTR
+                0x00000000000005c0                __CMPSWAPSI
+                0x00000000000005e0                __CMPSWAPSI_ret
+                0x00000000000005ec                __LMM_RET
+                0x0000000000000660                __LMM_FCACHE_START
+ *(.kernel)
+ .kernel        0x0000000000000760        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(thread.o)
+                0x0000000000000760                __TLS
+
+.init           0x0000000000000784       0x74
+ *(.init*)
+ .init          0x0000000000000784       0x60 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+                0x0000000000000784                entry
+                0x0000000000000784                start
+                0x00000000000007ab                ___init
+ .init          0x00000000000007e4       0x14 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+
+.text           0x00000000000007f8     0x2c0c
+ *(.text*)
+ .text          0x00000000000007f8       0x30 cmm/gamepad.o
+                0x00000000000007f8                _testfunction
+                0x0000000000000806                _execute
+                0x0000000000000825                _joystick_left
+                0x0000000000000826                _joystick_right
+ .text          0x0000000000000828       0xb8 cmm/protcom.o
+                0x0000000000000828                _processbuttons
+                0x0000000000000855                _processjoystick
+                0x000000000000088d                _receive
+                0x00000000000008b7                _sendack
+ .text          0x00000000000008e0      0x164 cmm/prottrans.o
+                0x00000000000008e0                _send
+                0x0000000000000927                _sendrequest
+                0x0000000000000932                _senderror
+                0x0000000000000955                _sendlog
+                0x0000000000000960                _readString
+                0x0000000000000996                _sink
+ .text          0x0000000000000a44       0x60 cmm/protutil.o
+                0x0000000000000a44                _decodeintarray
+                0x0000000000000a6e                _encodeintarray
+ .text          0x0000000000000aa4      0x1a4 cmm/strutil.o
+                0x0000000000000aa4                _strntok
+                0x0000000000000acc                _strtokm
+                0x0000000000000b06                _strchrm
+                0x0000000000000b28                _strcmpm
+                0x0000000000000b4f                _strtoint
+                0x0000000000000b8b                _inttostr
+                0x0000000000000c28                _isnumeric
+                0x0000000000000c37                _flushstr
+ .text.startup.main
+                0x0000000000000c48        0xc /tmp/ccRvIpQb.o
+                0x0000000000000c48                _main
+ .text          0x0000000000000c54       0xac /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_log10f.o)
+                0x0000000000000c54                _log10
+                0x0000000000000c54                _log10f
+ .text          0x0000000000000d00      0x68c /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o)
+                0x0000000000000d00                _powf
+                0x0000000000000d00                _pow
+ .text          0x000000000000138c       0xb0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_sqrtf.o)
+                0x000000000000138c                _sqrtf
+                0x000000000000138c                _sqrt
+ .text          0x000000000000143c       0x84 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_floorf.o)
+                0x000000000000143c                _floorf
+                0x000000000000143c                _floor
+ .text          0x00000000000014c0       0xd8 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_scalbnf.o)
+                0x00000000000014c0                _scalbnf
+                0x00000000000014c0                _ldexpf
+                0x00000000000014c0                _ldexp
+ .text          0x0000000000001598      0x274 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_logf.o)
+                0x0000000000001598                _log
+                0x0000000000001598                _logf
+ .text          0x000000000000180c       0xbc /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial_utils.o)
+                0x000000000000180c                _fdserial_rxFlush
+                0x000000000000181b                _fdserial_rxReady
+                0x000000000000182f                _fdserial_rxTime
+                0x0000000000001860                _fdserial_txFlush
+                0x000000000000186f                _fdserial_rxPeek
+                0x0000000000001892                _fdserial_rxCount
+ .text          0x00000000000018c8      0x20c /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(fdserial.o)
+                0x00000000000018c8                _fdserial_open
+                0x00000000000019eb                _fdserial_txEmpty
+                0x0000000000001a01                _fdserial_rxCheck
+                0x0000000000001a2e                _fdserial_rxChar
+                0x0000000000001a3d                _fdserial_txChar
+                0x0000000000001a97                _fdserial_close
+ .text          0x0000000000001ad4       0xcc /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm_close.o)
+                0x0000000000001ad4                _simpleterm_close
+                0x0000000000001b2e                _simpleterm_reopen
+ .text          0x0000000000001ba0       0x50 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_close.o)
+                0x0000000000001ba0                _serial_close
+ .text          0x0000000000001bf0       0xc8 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_open.o)
+                0x0000000000001bf0                _serial_open
+ .text          0x0000000000001cb8       0xe4 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(serial_rxtx.o)
+                0x0000000000001d40                _serial_rxChar
+                0x0000000000001d6b                _serial_txChar
+ .text          0x0000000000001d9c        0xc /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(echo.o)
+                0x0000000000001d9c                _terminal_setEcho
+                0x0000000000001da2                _terminal_checkEcho
+ .text          0x0000000000001da8       0x4c /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+                0x0000000000001da8                _simpleterm_open
+                0x0000000000001ded                _simpleterm_pointer
+ .text          0x0000000000001df4       0x1c /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(pause.o)
+                0x0000000000001df4                _pause
+ .text          0x0000000000001e10       0x40 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+                0x0000000000001e10                _timeTicksSetup
+ .text          0x0000000000001e50       0x24 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(toggle.o)
+                0x0000000000001e50                _toggle
+ .text          0x0000000000001e74      0x370 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+                0x0000000000001e74                ___addsf3
+ .text          0x00000000000021e4      0x200 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+                0x00000000000021e4                ___divsf3
+ .text          0x00000000000023e4       0x58 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+                0x00000000000023e4                ___nesf2
+                0x00000000000023e4                ___eqsf2
+ .text          0x000000000000243c       0x9c /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+                0x000000000000243c                ___gtsf2
+                0x000000000000243c                ___gesf2
+ .text          0x00000000000024d8       0x9c /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+                0x00000000000024d8                ___lesf2
+                0x00000000000024d8                ___ltsf2
+ .text          0x0000000000002574      0x240 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+                0x0000000000002574                ___mulsf3
+ .text          0x00000000000027b4      0x390 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+                0x00000000000027b4                ___subsf3
+ .text          0x0000000000002b44       0x4c /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+                0x0000000000002b44                ___fixsfsi
+ .text          0x0000000000002b90       0xb0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+                0x0000000000002b90                ___floatsisf
+ .text          0x0000000000002c40        0xc /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(puts.o)
+                0x0000000000002c40                _puts
+ .text          0x0000000000002c4c      0x17c /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+                0x0000000000002c4c                ___fopen_driver
+                0x0000000000002d39                _fclose
+ .text          0x0000000000002dc8       0x50 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(init_io.o)
+                0x0000000000002dc8                __InitIO
+ .text          0x0000000000002e18      0x150 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(malloc.o)
+                0x0000000000002ec3                __common_malloc
+                0x0000000000002f37                _hubmalloc
+                0x0000000000002f43                _malloc
+                0x0000000000002f4f                _free
+                0x0000000000002f5b                _hubfree
+ .text          0x0000000000002f68        0x8 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(abort.o)
+                0x0000000000002f68                _abort
+ .text          0x0000000000002f70        0xc /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(sbrk.o)
+                0x0000000000002f70                _sbrk
+                0x0000000000002f70                __hubsbrk
+                0x0000000000002f70                __sbrk
+ .text          0x0000000000002f7c       0x9c /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(memset.o)
+                0x0000000000002f7c                _memset
+ .text          0x0000000000003018      0x1dc /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o)
+ .text          0x00000000000031f4       0xe0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fflush.o)
+                0x00000000000032af                _fflush
+ .text          0x00000000000032d4       0x60 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputs.o)
+                0x00000000000032d4                ___do_fputs
+                0x000000000000332b                _fputs
+ .text          0x0000000000003334       0x50 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(atoi.o)
+                0x0000000000003334                _atoi
+                0x0000000000003334                _atol
+ .text          0x0000000000003384       0x80 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fputc.o)
+                0x0000000000003384                _fputc
+                0x0000000000003404                _etext = .
+
+.fini           0x0000000000003404       0x30
+ *(.fini*)
+ .fini          0x0000000000003404       0x1c /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtbegin.o
+                0x0000000000003404                _exit
+ .fini          0x0000000000003420       0x14 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+                0x0000000000003422                __exit
+                0x0000000000003422                __Exit
+                0x000000000000342e                __ExitHook
+
+.hub            0x0000000000003434      0x3dc
+ *(.hubstart)
+ *(.hubtext*)
+ .hubtext       0x0000000000003434      0x134 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(terminal.o)
+                0x0000000000003434                __term_write
+                0x0000000000003480                __term_read
+ *(.hubdata*)
+ *(.hub)
+ .hub           0x0000000000003568        0x4 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+                0x0000000000003568                _dport_ptr
+ *(.data)
+ .data          0x000000000000356c       0x10 cmm/gamepad.o
+                0x0000000000003574                _mapping
+ .data          0x000000000000357c        0x8 cmm/protcom.o
+ .data          0x0000000000003584       0x10 cmm/prottrans.o
+                0x0000000000003590                _countdown
+ .data          0x0000000000003594        0x4 cmm/strutil.o
+ .data          0x0000000000003598       0x2c /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_powf.o)
+ .data          0x00000000000035c4       0x10 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(s_scalbnf.o)
+ .data          0x00000000000035d4        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libm.a(e_logf.o)
+ .data          0x00000000000035d8      0x150 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libfdserial/cmm//libfdserial.a(pst_firmware.o)
+                0x00000000000035d8                _binary_pst_dat_start
+                0x0000000000003728                _binary_pst_dat_end
+ .data          0x0000000000003728        0x8 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(default_io.o)
+                0x0000000000003728                __driverlist
+ .data          0x0000000000003730        0xc /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(init_io.o)
+ .data          0x000000000000373c       0x10 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(malloc.o)
+                0x000000000000373c                __hub_malloc_heap
+                0x0000000000003744                __malloc_heap
+ .data          0x000000000000374c        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(sbrk.o)
+                0x000000000000374c                __heap_base
+ .data          0x0000000000003750       0x2c /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o)
+                0x0000000000003750                __SimpleSerialDriver
+                0x0000000000003774                __SimpleSerialPrefix
+ .data          0x000000000000377c        0xc /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(serialparam.o)
+                0x000000000000377c                __baud
+                0x0000000000003780                __txpin
+                0x0000000000003784                __rxpin
+ .data          0x0000000000003788       0x84 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(ctype.o)
+                0x0000000000003788                ___ctype
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x000000000000380c                PROVIDE (__C_LOCK, .)
+                0x000000000000380c        0x4 LONG 0x0
+
+.ctors          0x0000000000003810       0x10
+ *(.ctors*)
+ .ctors         0x0000000000003810        0x4 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+ .ctors         0x0000000000003814        0x4 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+ .ctors         0x0000000000003818        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(init_io.o)
+ .ctors         0x000000000000381c        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+                0x000000000000381c                __environ
+                0x000000000000381c                __argv
+
+.dtors          0x0000000000003820        0xc
+ *(.dtors*)
+ .dtors         0x0000000000003820        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+ .dtors         0x0000000000003824        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(SimpleSerial.o)
+ .dtors         0x0000000000003828        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/_crtend.o
+
+.data           0x000000000000382c        0x0
+                0x000000000000382c                . = ALIGN (0x4)
+
+.bss            0x000000000000382c      0x2d0
+                0x000000000000382c                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x000000000000382c        0xc cmm/prottrans.o
+                0x000000000000382c                _newping
+                0x0000000000003830                _pingprogress
+                0x0000000000003834                _con
+ .bss           0x0000000000003838       0x50 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(init_io.o)
+ .bss           0x0000000000003888        0x4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(malloc.o)
+ .bss           0x000000000000388c       0xa8 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(thread.o)
+                0x000000000000388c                ___napuntil_ptr
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0000000000003934        0x8 /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/TextDevices/libsimpletext/cmm//libsimpletext.a(simpleterm.o)
+                0x0000000000003934                _simpleterm_ecB
+                0x0000000000003935                _simpleterm_ecsB
+                0x0000000000003936                _simpleterm_ecA
+                0x0000000000003937                _simpleterm_ecsA
+                0x0000000000003938                _simpleterm_echo
+ COMMON         0x000000000000393c       0x1c /home/christoferis/Documents/SimpleIDE/Learn/Simple Libraries/Utility/libsimpletools/cmm//libsimpletools.a(timeTicks.o)
+                0x000000000000393c                _st_iodt
+                0x0000000000003940                _us
+                0x0000000000003944                _st_usTicks
+                0x0000000000003948                _ms
+                0x000000000000394c                _st_timeout
+                0x0000000000003950                _st_pauseTicks
+                0x0000000000003954                _st_msTicks
+ COMMON         0x0000000000003958      0x1a4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/../../../../propeller-elf/lib/cmm/short-doubles/libc.a(fopen_intern.o)
+                0x0000000000003958                ___stdio_lock
+                0x000000000000395c                ___files
+                0x0000000000003afc                PROVIDE (__bss_end, .)
+
+.hub_heap       0x0000000000003afc        0x4
+                0x0000000000003b00                . = (. + 0x4)
+ *fill*         0x0000000000003afc        0x4 00
+                0x0000000000003afc                ___hub_heap_start = ADDR (.hub_heap)
+
+.drivers
+ *(.drivers)
+                0x0000000000000020                __load_start_kernel = LOADADDR (.lmmkernel)
+                0x0000000000003810                ___CTOR_LIST__ = ADDR (.ctors)
+                0x0000000000003820                ___DTOR_LIST__ = ADDR (.dtors)
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo .zdebug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames .zdebug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x120
+ *(.debug_aranges .zdebug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_aranges
+                0x0000000000000020       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_aranges
+                0x0000000000000040       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_aranges
+                0x0000000000000060       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_aranges
+                0x0000000000000080       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_aranges
+                0x00000000000000a0       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_aranges
+                0x00000000000000c0       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_aranges
+                0x00000000000000e0       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_aranges
+                0x0000000000000100       0x20 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_pubnames
+ *(.debug_pubnames .zdebug_pubnames)
+
+.debug_info     0x0000000000000000     0x1dd5
+ *(.debug_info .gnu.linkonce.wi.* .zdebug_info)
+ .debug_info    0x0000000000000000      0x3d6 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_info    0x00000000000003d6      0x3af /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_info    0x0000000000000785      0x2d9 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_info    0x0000000000000a5e      0x311 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_info    0x0000000000000d6f      0x311 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_info    0x0000000000001080      0x416 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_info    0x0000000000001496      0x3d8 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_info    0x000000000000186e      0x29d /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_info    0x0000000000001b0b      0x2ca /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_abbrev   0x0000000000000000      0x80c
+ *(.debug_abbrev .zdebug_abbrev)
+ .debug_abbrev  0x0000000000000000       0xeb /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_abbrev  0x00000000000000eb       0xe9 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_abbrev  0x00000000000001d4       0xdc /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_abbrev  0x00000000000002b0       0xdc /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_abbrev  0x000000000000038c       0xdc /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_abbrev  0x0000000000000468       0xf0 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_abbrev  0x0000000000000558       0xeb /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_abbrev  0x0000000000000643       0xdc /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_abbrev  0x000000000000071f       0xed /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_line     0x0000000000000000      0xb4c
+ *(.debug_line .zdebug_line)
+ .debug_line    0x0000000000000000      0x276 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_line    0x0000000000000276      0x11b /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_line    0x0000000000000391       0xc4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_line    0x0000000000000455       0xe9 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_line    0x000000000000053e       0xe9 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_line    0x0000000000000627      0x129 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_line    0x0000000000000750      0x28d /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_line    0x00000000000009dd       0xaa /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_line    0x0000000000000a87       0xc5 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_frame    0x0000000000000000      0x15c
+ *(.debug_frame .zdebug_frame)
+ .debug_frame   0x0000000000000000       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_frame   0x0000000000000024       0x30 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_frame   0x0000000000000054       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_frame   0x0000000000000078       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_frame   0x000000000000009c       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_frame   0x00000000000000c0       0x30 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_frame   0x00000000000000f0       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_frame   0x0000000000000114       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_frame   0x0000000000000138       0x24 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_str
+ *(.debug_str .zdebug_str)
+
+.debug_loc      0x0000000000000000     0x1bd4
+ *(.debug_loc .zdebug_loc)
+ .debug_loc     0x0000000000000000      0x6f4 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_loc     0x00000000000006f4      0x4d1 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_loc     0x0000000000000bc5       0x95 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_loc     0x0000000000000c5a       0xe1 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_loc     0x0000000000000d3b       0xe1 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_loc     0x0000000000000e1c      0x560 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_loc     0x000000000000137c      0x6b5 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_loc     0x0000000000001a31       0xa9 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)
+ .debug_loc     0x0000000000001ada       0xfa /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(floatsisf.o)
+
+.debug_macinfo
+ *(.debug_macinfo .zdebug_macinfo)
+                0x00000000000007c0                PROVIDE (par, PAR)
+                0x00000000000007c4                PROVIDE (cnt, CNT)
+                0x00000000000007c8                PROVIDE (ina, INA)
+                0x00000000000007cc                PROVIDE (inb, INB)
+                0x00000000000007d0                PROVIDE (outa, OUTA)
+                0x00000000000007d4                PROVIDE (outb, OUTB)
+                0x00000000000007d8                PROVIDE (dira, DIRA)
+                0x00000000000007dc                PROVIDE (dirb, DIRB)
+                0x00000000000007e0                PROVIDE (ctra, CTRA)
+                0x00000000000007e4                PROVIDE (ctrb, CTRB)
+                0x00000000000007e8                PROVIDE (frqa, FRQA)
+                0x00000000000007ec                PROVIDE (frqb, FRQB)
+                0x00000000000007f0                PROVIDE (phsa, PHSA)
+                0x00000000000007f4                PROVIDE (phsb, PHSB)
+                0x00000000000007f8                PROVIDE (vcfg, VCFG)
+                0x00000000000007fc                PROVIDE (vscl, VSCL)
+                0x0000000000003b0c                PROVIDE (__hub_end, (ADDR (.hub_heap) + 0x10))
+                0x0000000000008000                PROVIDE (__stack_end, 0x8000)
+OUTPUT(cmm/pm_bot.elf elf32-propeller)
+
+.debug_ranges   0x0000000000000000      0x318
+ .debug_ranges  0x0000000000000000       0x78 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(addsf3.o)
+ .debug_ranges  0x0000000000000078       0x58 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(divsf3.o)
+ .debug_ranges  0x00000000000000d0       0x48 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(eqsf2.o)
+ .debug_ranges  0x0000000000000118       0x68 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(gesf2.o)
+ .debug_ranges  0x0000000000000180       0x68 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(lesf2.o)
+ .debug_ranges  0x00000000000001e8       0x78 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(mulsf3.o)
+ .debug_ranges  0x0000000000000260       0x80 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(subsf3.o)
+ .debug_ranges  0x00000000000002e0       0x38 /opt/parallax/lib/gcc/propeller-elf/4.6.1/cmm/short-doubles/libgcc.a(fixsfsi.o)

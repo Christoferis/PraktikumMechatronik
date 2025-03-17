@@ -4,11 +4,10 @@
 #include "strutil.h"
 #include "propeller.h"
 #include "abdrive360.h"
-#include "simpletext.h"
 
 // defines
 #define lenmsg 128
-#define pingtime 500
+#define pingtime 1000
 
 // file wide variables
 fdserial *con = 0;
@@ -50,7 +49,7 @@ void sink()
       //reset servos if no message (joysticks should always be sent): only if servos are there
       //drive_speed(0, 0);
 
-      pause(10);
+      toggle(26);
       continue;
     } else { //bot should only ping when timeouting
       newping = 0;
@@ -81,12 +80,7 @@ void sink()
     case 'e':
       break;
 
-    //empty messages
-    case '\r':
-      break;
-
     default:
-      printbuffer(msg);
       send('e', "404\r");
       break;
     }    
@@ -144,7 +138,7 @@ void readString(char st[])
   int i = 0;
 
   // high throughput bug: fix by quantizing messages to base 2 and utilizing \n as new sep, filling messages with \r
-  for (i = 0; i < lenmsg && c != '\n'; i++)
+  for (i = 0; i < lenmsg && c != '\r'; i++)
   {
     c = fdserial_rxChar(con);    
     st[i] = c;   
@@ -157,28 +151,4 @@ void readString(char st[])
   {
     st[i] = 0;
   }
-}
-
-
-// debugging only: prints whole current buffer
-void printbuffer(char* msg)
-{
-  putChar('\n');
-  int i;
-  for (i = 0; i < lenmsg; i++)
-  {
-    char c = msg[i];
-        if (c == '\r')
-    {
-      putChar('z');
-    } else if (c == '\n')
-    {
-      putChar('x');
-    } else 
-    {
-      putChar(c);
-    }
-  } 
-  
-  putChar('\n');     
 }
