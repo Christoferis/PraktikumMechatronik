@@ -5,16 +5,21 @@
 #include "simpletools.h"
 #include "prottrans.h"
 #include "servo360.h"
+#include "abdrive360.h"
 #include "gamepad.h"
 
 int main(void)
 {
-  pause(100);
+  // race conditions
+  pause(50);
   
-  while (1)
-   {
-     sink();
-   }
+
+
+  // starting servo cog
+  cog_run(&sink, 512);
+  
+  pause(50);
+
   
   return 0;
 }

@@ -11,6 +11,14 @@
 #define JOYSTICKS 2
 #define len_mapping 1
 
+// actual mapping of controller
+#define BRUSH_SPEED_P 5
+#define BRUSH_SPEED_M 4
+#define BRUSH 1
+
+#define LIFT_UP 12
+#define LIFT_DOWN 16
+
 // TODO: make struct array with extra space instead
 typedef struct _buttonfunc
 {
