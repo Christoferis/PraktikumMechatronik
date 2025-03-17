@@ -85,6 +85,7 @@ class transport_protocol:
                     self.protocol._accept(msg.removeprefix("r"))
 
                 elif msg.startswith("m"):
+                    pingprogress = False
                     debug("i: " + msg)
                     self._send("p")
 
@@ -109,14 +110,14 @@ class transport_protocol:
 
     def _send(self, msg: str):
         # quantize to base of 2
-        msg_out =  msg #msg_quantize(msg)
+        msg_out =  msg_quantize(msg)
 
         if msg_out is None:
             warning("Message " + msg + " too large")
             return
 
         with self.lock:
-            byte = (msg_out + "\r").encode()
+            byte = (msg_out + "\n").encode()
             sent = 0
 
             while sent < len(byte):
@@ -182,7 +183,12 @@ class pm_CommunicationProtocol(communication_protocol):
     def _accept(self, command):
 
         if "ab" in command:
-            self.waiting.remove(int(command.removeprefix("ab")))
+            # dpad doesnt adhere to this
+            button = int(command.removeprefix("ab"))
+
+            if button < 12:
+                self.waiting.remove(button)
+
             pass
         elif "aj" in command:
             pass
@@ -209,10 +215,6 @@ class pm_CommunicationProtocol(communication_protocol):
         pass
 
     def senddpad(self, dpad):
-        if dpad + 12 not in self.waiting:
-            self.waiting.append(dpad + 12)
-            pass
-
         self.tp.sendrequest("b" + str(dpad + 12))
         pass
 

@@ -11,9 +11,6 @@ const buttonfunction mapping[] = {{.designation = 9, .function = &testfunction}}
 void execute(int designation)
 {
     int i = 0;
-
-    printf("trace3\n");
-
     for (i = 0; i < len_mapping; i++)
     { 
         if (mapping[i].designation == designation)

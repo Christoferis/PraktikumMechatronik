@@ -52,7 +52,6 @@ void processbuttons(char buttons[])
     int maximalbuttons[11];
     int pressed = decodeintarray(buttons, maximalbuttons, 11);
     
-    printf("trace4\n");
     int i;
     for (i = 0; i < pressed; ++i)
     {

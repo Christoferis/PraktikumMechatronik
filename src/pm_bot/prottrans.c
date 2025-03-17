@@ -7,7 +7,7 @@
 
 // defines
 #define lenmsg 128
-#define pingtime 1000
+#define pingtime 25000
 
 // file wide variables
 fdserial *con = 0;
@@ -138,7 +138,7 @@ void readString(char st[])
   int i = 0;
 
   // high throughput bug: fix by quantizing messages to base 2 and utilizing \n as new sep, filling messages with \r
-  for (i = 0; i < lenmsg && c != '\r'; i++)
+  for (i = 0; i < lenmsg && c != '\n'; i++)
   {
     c = fdserial_rxChar(con);    
     st[i] = c;   
