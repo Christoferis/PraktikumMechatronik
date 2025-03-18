@@ -5,6 +5,7 @@
 #include "prottrans.h"
 #include "gamepad.h"
 #include "control.h"
+#include "simpletools.h"
 
 int main(void)
 {
