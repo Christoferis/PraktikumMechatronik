@@ -1,6 +1,5 @@
 #include "protcom.h"
 #include "prottrans.h"
-#include "simpletools.h"
 #include "protutil.h"
 #include "strutil.h"
 #include "gamepad.h"

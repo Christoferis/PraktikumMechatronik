@@ -2,10 +2,7 @@
  * This is the main pm_bot program file.
  */
 
-#include "simpletools.h"
 #include "prottrans.h"
-#include "servo360.h"
-#include "abdrive360.h"
 #include "gamepad.h"
 #include "control.h"
 

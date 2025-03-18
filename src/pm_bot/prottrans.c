@@ -3,11 +3,10 @@
 #include "protcom.h"
 #include "strutil.h"
 #include "propeller.h"
-#include "abdrive360.h"
 
 // defines
 #define lenmsg 128
-#define pingtime 25000
+#define pingtime 20000
 
 // file wide variables
 fdserial *con = 0;
@@ -43,13 +42,8 @@ void sink()
         newping = 0;
         
         // flush receive buffer just in case
-        fdserial_rxFlush(con);
+        fdserial_rxFlush(con);  
       }
-
-      //reset servos if no message (joysticks should always be sent): only if servos are there
-      //drive_speed(0, 0);
-
-      toggle(26);
       continue;
     } else { //bot should only ping when timeouting
       newping = 0;

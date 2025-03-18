@@ -4,56 +4,6 @@
 // own string library to cut down in memory usage (string.h bad)
 #define MAX_LOOPS 256
 
-// amount of tokens a string can be split into
-int strntok (char* string, char delimiter)
-{
-  //no trailing comma (n) -> can be split into n + 1 token
-  int count = 1;
-
-  // start with one for the chance if a delimiter is directly at the beginning
-  int prev = 1;
-
-  int i = 0;  
-  char c;
-  while ((c = string[i]) != '\r') {
-
-    if (c == delimiter && !prev) {
-      prev = 1;
-      count++;
-    } else if (c != delimiter) {
-      prev = 0;
-    }
-
-    i++;
-  }
-
-  return count;
-}
-
-// TODO if needed: investigate warning of simpleide
-int strtokm(char* string, char delim, char** dest)
-{
-  int i = 0;
-  int splits = 0; 
-  int sec = 0; 
-  char c = string[i];
-  
-  // to prevent redundant code 
-  while((c = string[i]) != '\r' && (++i) == i) {
-    if (c != delim) {
-      dest[splits][sec] = string[i];
-      sec++;
-    } else {
-      // add in \r at the end before moving
-      dest[splits][sec] = '\r';
-      splits++;
-      sec = 0; 
-    }
-  }
-
-  return splits + 1;
-}
-
 // finds a certain character in a string and returns a pointer to that spot
 char *strchrm(char *string, char c)
 {
@@ -78,23 +28,6 @@ char *strchrm(char *string, char c)
   {
     return 0;
   }
-}
-
-// TODO if needed: something might be wrong but I'm not gonna bother fixing it since it is not used now anyway
-// compares two strings
-int strcmpm(char *str1, char *str2)
-{
-  int i;
-
-  for (i = 0; (i < MAX_LEN) && str1[i] == str2[i]; i++)
-  {
-    if (str1[i] == '\r' || str1[i] == '\0')
-    {
-      return 1;
-    }
-  }
-  
-  return 0;
 }
 
 // converts a string into a integer
@@ -156,14 +89,4 @@ int inttostr(int num, char *out)
 int isnumeric(char c)
 {
   return c >= 48 && c <= 57;
-}
-
-//make sure to flush appropriately
-void flushstr(char* string, int len)
-{
-  int i;
-
-  for (i = 0; i < len; i++) {
-      string[i] = '\r';
-  }
 }
