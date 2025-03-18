@@ -3,16 +3,20 @@
 #include "protcom.h"
 #include "strutil.h"
 #include "propeller.h"
+#include "abdrive360.h"
 
 // defines
 #define lenmsg 128
 #define pingtime 20000
+#define idletime 10000
 
 // file wide variables
 fdserial *con = 0;
 int countdown = pingtime;
 int pingprogress = 0;
 int newping = 0;
+int request = -1;
+char msg[lenmsg];
 
 void readString(char st[]);
 
@@ -22,7 +26,6 @@ void send(char header, char st[]);
 // this function will be run in a cog
 void sink()
 {  
-  char msg[lenmsg];
 
   if (con == 0)
   {
@@ -49,6 +52,13 @@ void sink()
       newping = 0;
     }
     
+    // idle: to reset servos on inactivity (prevent sudden movement, based on when last request was sent)
+    if (request >= idletime)
+    {
+      drive_speed(0, 0);
+      request = 0;
+    }
+
     readString(msg);
     
     switch (msg[0])
@@ -67,6 +77,7 @@ void sink()
       break;
 
     case 'r':
+      request = -1;
       receive(msg + 1);
       break;
 
@@ -77,7 +88,7 @@ void sink()
     default:
       send('e', "404\r");
       break;
-    }    
+    }
   }
 }
 
