@@ -10,13 +10,14 @@
 
 int main(void)
 {
-  // race conditions
   pause(50);
 
-  // starting servo cog
-  cog_run(&sink, 512);
-  
+
+
   pause(50);
+
+  // run sink
+
 
   
   return 0;
