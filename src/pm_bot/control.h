@@ -2,10 +2,10 @@
 #define CONTROL
 
 #define LIFT_PIN_FEEDBACK 2
-#define LIFT_PIN_SIGNAL 2
+#define LIFT_PIN_SIGNAL 16
 
-#define BRUSH_PIN_FEEDBACK 2
-#define BRUSH_PIN_SIGNAL 2
+#define BRUSH_PIN_FEEDBACK 3
+#define BRUSH_PIN_SIGNAL 17
 
 #define LIFT_STEP 1
 
