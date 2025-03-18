@@ -5,6 +5,10 @@
 #include "strutil.h"
 #include "gamepad.h"
 
+// prototypes
+void processjoystick(char*);
+void processbuttons(char[]);
+
 void receive(char msg[])
 {  
     switch (msg[0])
@@ -17,7 +21,6 @@ void receive(char msg[])
         processjoystick(msg + 1);
         break;
     default:
-        toggle(26);
         senderror(4);
         break;
     }

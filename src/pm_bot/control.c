@@ -53,7 +53,7 @@ void lift_ascend()
     sendack(12);
 }
 
-void lift_ascend()
+void lift_descend()
 {
     lift_move(-1);
     sendack(16);
