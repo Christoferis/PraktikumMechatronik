@@ -12,8 +12,6 @@ int main(void)
 {
   // race conditions
   pause(50);
-  
-
 
   // starting servo cog
   cog_run(&sink, 512);

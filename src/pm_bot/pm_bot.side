@@ -9,6 +9,8 @@ strutil.h
 prottrans.h
 gamepad.h
 protutil.h
+control.c
+control.h
 >compiler=C
 >memtype=cmm main ram compact
 >optimize=-Os

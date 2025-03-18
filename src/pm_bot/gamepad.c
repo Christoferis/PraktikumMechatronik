@@ -1,8 +1,9 @@
 #include "gamepad.h"
-#include "strutil.h"
 #include "prottrans.h"
 #include "protcom.h"
+#include "abdrive360.h"
 
+#define COORDS_OFFSET 128
 
 const buttonfunction mapping[] = {{.designation = 9, .function = &testfunction}}; 
 
@@ -24,9 +25,11 @@ void execute(int designation)
     senderror(14);
 }
 
-// joysticks
+// joysticks: only left one is used (for now)
 void joystick_left (int coords[])
 {
+  //movement
+  drive_speed(coords[1] + coords[0] - 256, coords[1] - coords[0]);
 }
 
 void joystick_right (int coords[])
