@@ -1,4 +1,4 @@
-## pm_CommunicationProtocol
+<## pm_CommunicationProtocol
 
 ### Mechanismus
 Das CommunicationsProtocol ist TCP basiert um auch blockende Aktionen zu ermöglichen. Blockende Aktionen sind Aktionen die eine längere Zeit andauern und während dieser Zeit diese Aktion nicht nochmal aufgerufen werden kann (können auch den Bot blockieren)

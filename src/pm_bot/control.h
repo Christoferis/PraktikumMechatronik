@@ -12,5 +12,12 @@
 
 void control_init();
 
+// bot functions
+void brush_speedinc();
+void brush_speeddec();
+void brush_toggle();
+
+void lift_ascend();
+void lift_descend();
 
 #endif

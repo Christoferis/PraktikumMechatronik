@@ -7,18 +7,17 @@
 #include "servo360.h"
 #include "abdrive360.h"
 #include "gamepad.h"
+#include "control.h"
 
 int main(void)
 {
   pause(50);
-
-
+  control_init();
 
   pause(50);
 
   // run sink
+  sink();
 
-
-  
   return 0;
 }

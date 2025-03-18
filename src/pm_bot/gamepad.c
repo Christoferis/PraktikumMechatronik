@@ -2,13 +2,21 @@
 #include "prottrans.h"
 #include "protcom.h"
 #include "abdrive360.h"
+#include "control.h"
 
 #define COORDS_OFFSET 128
 
-const buttonfunction mapping[] = {{.designation = 9, .function = &testfunction}}; 
+const buttonfunction mapping[] = {
+    {.designation = 9, .function = &testfunction},
+    {.designation = 0, .function = &brush_toggle},
+    {.designation = 5, .function = &brush_speedinc},
+    {.designation = 4, .function = &brush_speeddec},
+    {.designation = 12, .function = &lift_ascend},
+    {.designation = 16, .function = &lift_descend},
+}; 
 
 // search and execute
-// send back e514 
+// send back e514
 void execute(int designation)
 {
     int i = 0;

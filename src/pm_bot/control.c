@@ -5,7 +5,6 @@
 #include "gamepad.h"
 
 // extern variable declarations
-volatile int lift = 0;
 int brush = 0;
 int brush_speed = 10;
 
@@ -25,11 +24,39 @@ void brush_toggle()
 {
     brush = toggle(brush);
     servo360_speed(BRUSH_PIN_SIGNAL, brush_speed * brush);
+
+    sendack(0);
 }
 
+// wrapper functions for controller
+void brush_speedinc()
+{
+    brush_changespeed(1);
+    sendack(5);
+}
+
+void brush_speeddec()
+{
+    brush_changespeed(-1);
+    sendack(4);
+}
+
+// lift portion
 void lift_move(int direction)
 {
     servo360_angle(LIFT_PIN_SIGNAL, max(servo360_getAngle(LIFT_PIN_SIGNAL) + direction, 0));
+}
+
+void lift_ascend()
+{
+    lift_move(1);
+    sendack(12);
+}
+
+void lift_ascend()
+{
+    lift_move(-1);
+    sendack(16);
 }
 
 void control_init()
