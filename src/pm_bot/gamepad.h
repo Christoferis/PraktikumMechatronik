@@ -9,7 +9,7 @@
 
 // Amount of joysticks the controller has
 #define JOYSTICKS 2
-#define len_mapping 1
+#define len_mapping 7
 
 // actual mapping of controller
 #define BRUSH_SPEED_P 5

@@ -9,6 +9,8 @@
 
 int main(void)
 {
+  
+  //test();
   pause(50);
   control_init();
 

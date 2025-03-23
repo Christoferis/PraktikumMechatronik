@@ -7,8 +7,8 @@
 #define BRUSH_PIN_FEEDBACK 3
 #define BRUSH_PIN_SIGNAL 17
 
-#define LIFT_STEP 1
-
+#define LIFT_STEP 10
+#define BRUSH_STEP 10
 
 void control_init();
 
@@ -16,6 +16,7 @@ void control_init();
 void brush_speedinc();
 void brush_speeddec();
 void brush_toggle();
+void brush_reverse();
 
 void lift_ascend();
 void lift_descend();

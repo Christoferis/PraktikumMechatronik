@@ -4,15 +4,19 @@
 #include "protutil.h"
 #include "gamepad.h"
 
-// extern variable declarations
+
+// boolean: brush on / off
 int brush = 0;
-int brush_speed = 10;
+int brush_speed = 50;
+
+//angle of lift as variable
+int lift_pos = 0;
 
 // int indicates in which way speed is changed: -1: decreased, 1: increased
 void brush_changespeed(int direction)
 {
     brush_speed += direction;
-    brush_speed = clamp(brush_speed, -128, 128);
+    brush_speed = clamp(brush_speed, -720, 720);
 
     if (brush)
     {
@@ -22,7 +26,13 @@ void brush_changespeed(int direction)
 
 void brush_toggle()
 {
-    brush = toggle(brush);
+    if (brush)
+    {
+      brush = 0;
+    } else {
+      brush = 1;
+    }
+  
     servo360_speed(BRUSH_PIN_SIGNAL, brush_speed * brush);
 
     sendack(0);
@@ -31,14 +41,17 @@ void brush_toggle()
 // wrapper functions for controller
 void brush_speedinc()
 {
-    brush_changespeed(1);
-    sendack(5);
+    brush_changespeed(BRUSH_STEP);
 }
 
 void brush_speeddec()
 {
-    brush_changespeed(-1);
-    sendack(4);
+    brush_changespeed(-BRUSH_STEP);
+}
+
+void brush_reverse()
+{
+  brush_changespeed(-brush_speed);
 }
 
 // lift portion
@@ -49,14 +62,12 @@ void lift_move(int direction)
 
 void lift_ascend()
 {
-    lift_move(1);
-    sendack(12);
+    lift_move(LIFT_STEP);
 }
 
 void lift_descend()
 {
-    lift_move(-1);
-    sendack(16);
+    lift_move(-LIFT_STEP);
 }
 
 void control_init()
