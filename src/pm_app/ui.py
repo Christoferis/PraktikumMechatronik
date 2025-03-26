@@ -34,10 +34,13 @@ class window_log_handler(logging.Handler):
 
     def emit(self, record):
 
-        if record.levelno >= self.level:
-            self.window.config(state="normal")
-            self.window.insert("1.0", "[" + record.levelname + "] " + record.msg + "\n")
-            self.window.config(state="disabled")
+        try:
+            if record.levelno >= self.level:
+                self.window.config(state="normal")
+                self.window.insert("1.0", "[" + record.levelname + "] " + record.msg + "\n")
+                self.window.config(state="disabled")
+        except Exception:
+            pass
 
     #clears the entire window
     def clear_window(self):

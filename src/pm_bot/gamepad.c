@@ -38,7 +38,7 @@ void execute(int designation)
 void joystick_left (int coords[])
 {
   //movement
-  drive_speed((coords[1] - 128) + (coords[0] - 128), (coords[1] - 128) - (coords[0] - 128));
+  drive_speed((coords[1] - 128) - (coords[0] - 128), (coords[1] - 128) + (coords[0] - 128));
 }
 
 void joystick_right (int coords[])

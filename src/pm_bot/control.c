@@ -57,7 +57,14 @@ void brush_reverse()
 // lift portion
 void lift_move(int direction)
 {
-    servo360_angle(LIFT_PIN_SIGNAL, max(servo360_getAngle(LIFT_PIN_SIGNAL) + direction, 0));
+    // toggle thing (instead of press down)
+    if (servo360_getCsop(LIFT_PIN_SIGNAL) == S360_SPEED)
+    {
+        servo360_speed(LIFT_PIN_SIGNAL, 0);
+    } else
+    {
+        servo360_speed(LIFT_PIN_SIGNAL, direction * LIFT_STEP);
+    }
 }
 
 void lift_ascend()
