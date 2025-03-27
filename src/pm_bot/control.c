@@ -10,7 +10,7 @@ int brush = 0;
 int brush_speed = 50;
 
 //angle of lift as variable
-int lift_pos = 0;
+int lift = 0;
 
 // int indicates in which way speed is changed: -1: decreased, 1: increased
 void brush_changespeed(int direction)
@@ -57,13 +57,13 @@ void brush_reverse()
 // lift portion
 void lift_move(int direction)
 {
-    // toggle thing (instead of press down)
-    if (servo360_getCsop(LIFT_PIN_SIGNAL) == S360_SPEED)
-    {
-        servo360_speed(LIFT_PIN_SIGNAL, 0);
-    } else
+    if (!lift)
     {
         servo360_speed(LIFT_PIN_SIGNAL, direction * LIFT_STEP);
+        lift = 1;
+    } else {
+        servo360_speed(LIFT_PIN_SIGNAL, 0);
+        lift = 0;
     }
 }
 

@@ -185,9 +185,7 @@ class pm_CommunicationProtocol(communication_protocol):
         if "ab" in command:
             # dpad doesnt adhere to this
             button = int(command.removeprefix("ab"))
-
-            if button < 12:
-                self.waiting.remove(button)
+            self.waiting.remove(button)
 
             pass
         elif "aj" in command:
@@ -215,7 +213,10 @@ class pm_CommunicationProtocol(communication_protocol):
         pass
 
     def senddpad(self, dpad):
-        self.tp.sendrequest("b" + str(dpad + 12))
+        if dpad != 14:
+            self.tp.sendrequest("b" + str(dpad + 12))
+            self.waiting.append(dpad + 12)
+
         pass
 
     def close(self):
